@@ -7,7 +7,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-09-25",
+      "updated": "2026-09-26",
       "links": [
         {
           "label": "ВКонтакте",
@@ -63,25 +63,16 @@
           "closed_at": null
         },
         {
-          "title": "Royal Canin Medium Puppy, 3 кг",
-          "note": "щенкам",
+          "title": "Monge Grill Puppy&Junior, паучи 100 г × 24",
+          "note": "щенкам и собакам-старичкам",
           "category": "food",
-          "price": 2724,
+          "price": 3057,
           "platform": "market",
-          "url": "https://market.yandex.ru/card/-/103201181434",
+          "url": "https://market.yandex.ru/card/-/5625139442",
+          "need": 5,
           "type": "count",
-          "need": 3,
           "bought": 0,
           "closed_at": null
-        },
-        {
-          "title": "Pro Plan Sterilised, паучи 85 г × 26",
-          "note": "стерилизованным кошкам",
-          "category": "food",
-          "price": 2089,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/235204215/",
-          "type": "constant"
         },
         {
           "title": "Пелёнки Skippy 60×90, 30 шт",
@@ -91,6 +82,39 @@
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
+        },
+        {
+          "title": "Миска Triol из нержавеющей стали, 800 мл",
+          "note": "собакам в вольеры",
+          "category": "food",
+          "price": 317,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103199658334",
+          "need": 10,
+          "type": "count",
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Наполнитель древесный, 15 кг",
+          "note": "в кошачьи лотки",
+          "category": "hygiene",
+          "price": 433,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/208273638/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Когтеточка-столбик Triol, 30×30×43 см",
+          "note": "кошкам в вольеры",
+          "category": "carrier",
+          "price": 1139,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/167268100/detail.aspx",
+          "need": 3,
+          "type": "count",
+          "bought": 0,
+          "closed_at": null
         }
       ],
       "type": "муниципальный приют ЮАО"
@@ -100,7 +124,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-09-25",
+      "updated": "2026-09-26",
       "links": [
         {
           "label": "ВКонтакте",
@@ -208,7 +232,7 @@
       "name": "Кормильцы уличных кошек Орехово-Борисово и Зябликово",
       "tab": "Кормильцы кошек",
       "who": "370 стерилизаций за три года",
-      "updated": "2026-09-25",
+      "updated": "2026-09-26",
       "links": [
         {
           "label": "Пост куратора ВКонтакте",
