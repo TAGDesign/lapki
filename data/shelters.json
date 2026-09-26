@@ -1,0 +1,307 @@
+{
+  "chat_url": "https://t.me/designta",
+  "channel_url": "https://t.me/designta",
+  "shelters": [
+    {
+      "slug": "biryulevo",
+      "name": "Приют Бирюлёво",
+      "tab": "Приют Бирюлёво",
+      "who": "2200 собак · 300 кошек",
+      "updated": "2026-09-25",
+      "links": [
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.com/izpriuta"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/izpriuta"
+        },
+        {
+          "label": "Реквизиты и отчёты",
+          "url": "https://uao-priut.ru"
+        }
+      ],
+      "money_url": "https://uao-priut.ru",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Булатниковская ул., 4А"
+        },
+        {
+          "platform": "market",
+          "address": "Булатниковская ул., 6А (постамат)"
+        },
+        {
+          "platform": "wb",
+          "address": "Булатниковская ул., 6А"
+        }
+      ],
+      "items": [
+        {
+          "title": "Royal Canin Gastrointestinal, 2 кг",
+          "note": "кошкам с больным ЖКТ",
+          "category": "food",
+          "price": 3372,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/135997700/",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Farmina Vet Life Renal, 2 кг",
+          "note": "кошкам с больными почками",
+          "category": "food",
+          "price": 3345,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103823720115",
+          "type": "count",
+          "need": 2,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Royal Canin Medium Puppy, 3 кг",
+          "note": "щенкам",
+          "category": "food",
+          "price": 2724,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103201181434",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Pro Plan Sterilised, паучи 85 г × 26",
+          "note": "стерилизованным кошкам",
+          "category": "food",
+          "price": 2089,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/235204215/",
+          "type": "constant"
+        },
+        {
+          "title": "Пелёнки Skippy 60×90, 30 шт",
+          "note": "впитывающие",
+          "category": "hygiene",
+          "price": 449,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "муниципальный приют ЮАО"
+    },
+    {
+      "slug": "lefedun",
+      "name": "АНО «Лефедун»",
+      "tab": "АНО «Лефедун»",
+      "who": "волонтёры Орехово · 6 тонн корма за август",
+      "updated": "2026-09-25",
+      "links": [
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.com/lefedun"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/lefedun"
+        },
+        {
+          "label": "Реквизиты и отчёты",
+          "url": "https://lefedun.ru"
+        }
+      ],
+      "money_url": "https://lefedun.ru",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        },
+        {
+          "platform": "market",
+          "address": "Шипиловская ул., 46, корп. 1, стр. 2"
+        },
+        {
+          "platform": "wb",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        }
+      ],
+      "items": [
+        {
+          "title": "Pedigree для собак, 2 кг",
+          "note": "собакам на точке сбора",
+          "category": "food",
+          "price": 574,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/1849866143/",
+          "type": "count",
+          "need": 5,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Purina ONE для стерилизованных кошек, 1,5 кг",
+          "note": "кошкам на точке сбора",
+          "category": "food",
+          "price": 777,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/140701761/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Felix Аппетитные кусочки, паучи 75 г × 26",
+          "note": "в передачки опекунам",
+          "category": "food",
+          "price": 807,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/714958775/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Инспектор Квадро К, капли для кошек 4–8 кг",
+          "note": "капли от блох и глистов",
+          "category": "meds",
+          "price": 752,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Dreamies, 60 г × 8",
+          "note": "лакомства для кошек",
+          "category": "food",
+          "price": 727,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/3536803733/",
+          "type": "count",
+          "need": 5,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Переноска пластиковая 47×30×29 см",
+          "note": "возить животных в клинику",
+          "category": "carrier",
+          "price": 661,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/4310810516",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        }
+      ],
+      "type": "АНО, волонтёрская команда"
+    },
+    {
+      "slug": "kormiltsy",
+      "name": "Кормильцы уличных кошек Орехово-Борисово и Зябликово",
+      "tab": "Кормильцы кошек",
+      "who": "370 стерилизаций за три года",
+      "updated": "2026-09-25",
+      "links": [
+        {
+          "label": "Пост куратора ВКонтакте",
+          "url": "https://vk.com/obzunited"
+        }
+      ],
+      "money_url": "",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        },
+        {
+          "platform": "market",
+          "address": "Шипиловская ул., 46, корп. 1, стр. 2"
+        },
+        {
+          "platform": "wb",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        }
+      ],
+      "items": [
+        {
+          "title": "Whiskas для котят, 350 г",
+          "note": "котятам с улицы",
+          "category": "food",
+          "price": 178,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103579446634",
+          "type": "count",
+          "need": 20,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Заменитель кошачьего молока Happy Zooooo, 300 г",
+          "note": "котятам без мамы",
+          "category": "food",
+          "price": 1212,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/1655767499/",
+          "type": "count",
+          "need": 2,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Felix Аппетитные кусочки, паучи 75 г × 26",
+          "note": "кошкам на прикорме",
+          "category": "food",
+          "price": 807,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/714958775/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Переноска пластиковая 47×30×29 см",
+          "note": "для отлова на стерилизацию",
+          "category": "carrier",
+          "price": 661,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/4310810516",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Purina ONE для стерилизованных кошек, 1,5 кг",
+          "note": "кошкам на прикорме",
+          "category": "food",
+          "price": 777,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/140701761/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Инспектор Квадро К, капли для кошек 4–8 кг",
+          "note": "капли от блох и глистов",
+          "category": "meds",
+          "price": 752,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "куратор, без юрлица"
+    }
+  ]
+}

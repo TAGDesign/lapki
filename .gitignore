@@ -1,0 +1,13 @@
+.DS_Store
+lapki-pack/
+DESIGN.md
+ILLUSTRATIONS.md
+wireframe.html
+screen.html
+fonts.html
+figma-export/
+assets/src/
+serve.py
+.claude/
+.impeccable/
+assets/icons/

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Лапки — купите приюту то, что нужно</title>
+  <meta name="description" content="Актуальные списки нужд приютов юга Москвы. Заказываете на маркетплейсе в пункт выдачи рядом с приютом, волонтёры забирают.">
+  <meta property="og:title" content="Купите приюту то, что нужно">
+  <meta property="og:description" content="Списки нужд приютов юга Москвы с кнопкой «Купить» и доставкой в пункт выдачи рядом с приютом.">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preload" href="assets/fonts/inter-tight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#lists">Перейти к спискам</a>
+<div class="col">
+  <header class="top">
+    <a class="brand" href="./"><img src="lapki-mark.png" alt="" width="36" height="36">лапки</a>
+    <a class="pill" data-link="channel" href="#" target="_blank" rel="noopener">Telegram</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <h1 id="h1">Вот что нужно приютам сегодня</h1>
+        <p class="lead">Заказываете на маркетплейсе в пункт выдачи рядом с приютом. Волонтёры забирают, мы присылаем фото.</p>
+      </div>
+
+      <div class="scene">
+        <div class="duo" aria-hidden="true">
+          <div class="ill ill-l"><img src="assets/ill-person.png" alt="" onerror="this.remove()"></div>
+          <div class="ill ill-r"><img src="assets/ill-animals.png" alt="" onerror="this.remove()"></div>
+        </div>
+        <a class="need" id="hero-need" href="#" hidden></a>
+      </div>
+
+      <div>
+        <a class="cta" href="#lists">Смотреть списки</a>
+        <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <p>Списки собираем вручную по постам приютов и обновляем раз в день. Рядом с кнопкой «Купить» — самая низкая цена из трёх площадок: Ozon, Маркета и Wildberries. Считаем без персональных скидок, кошельков и банковских карт.</p>
+    </section>
+
+    <h2 class="sr-only">Кому нужна помощь</h2>
+    <section class="folders" id="lists" aria-label="Получатели"></section>
+
+    <section class="page dark" aria-labelledby="h-how">
+      <h2 id="h-how">Как заказать</h2>
+      <ol class="steps">
+        <li><b>Выберите позицию и нажмите «Купить»</b><span>Откроется карточка товара на маркетплейсе</span></li>
+        <li><b>Доставка — в пункт выдачи из папки приюта</b><span>В сам приют не везём: адрес не публикуют, иначе по нему подбрасывают животных</span></li>
+        <li><b>Пришлите код получения в наш чат</b><span>Передадим волонтёрам, напишем, когда заберут, и покажем фото</span>
+          <a class="chat" data-link="chat" href="#" target="_blank" rel="noopener">Открыть чат в Telegram</a></li>
+      </ol>
+    </section>
+
+    <section class="page light" aria-labelledby="h-trust">
+      <h2 id="h-trust">Почему нам можно доверять</h2>
+      <details open>
+        <summary>Кто делает и зачем</summary>
+        <p>«Лапки» — волонтёрский проект, его ведёт Саша, продуктовый дизайнер. Списки нужд приютов разбросаны по сайтам и группам, быстро устаревают, а приютам некогда их вести. Мы собираем их вручную из публичных постов приютов и обновляем раз в день — у каждого списка стоит дата.</p>
+      </details>
+      <details>
+        <summary>Как отбираем приюты</summary>
+        <p>Мы начали с трёх получателей. Приют Бирюлёво — большой, с волонтёрской командой и публичными реквизитами. АНО «Лефедун» и кормильцы уличных кошек Орехово-Борисово — маленькие, из нашего района, своего списка нужд у них нет. Для них список ведём мы.</p>
+      </details>
+      <details>
+        <summary>Почему приюту лучше вещь, чем перевод</summary>
+        <p>Мелкие покупки через официальный счёт для приюта — это долго и с налоговой морокой, а часть продавцов так вообще не продаёт. Когда вы покупаете сами, приют получает вещь без бухгалтерии.</p>
+      </details>
+    </section>
+
+    <section class="page light" id="delivered" aria-labelledby="h-del" hidden>
+      <h2 id="h-del">Что уже доехало</h2>
+      <div class="grid" id="delivered-grid"></div>
+    </section>
+
+    <section class="page light" id="closed" aria-labelledby="h-closed" hidden>
+      <p class="cap" id="h-closed">Закрыто на этой неделе</p>
+      <div id="closed-list"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="brand">лапки</p>
+    <p id="money-line">Удобнее помочь деньгами — реквизиты приютов: <span id="money-links"></span></p>
+    <p>Позиция уже закрыта или ссылка ведёт не туда? <a data-link="chat" href="#" target="_blank" rel="noopener">Напишите нам</a></p>
+    <p>Приют хочет попасть на страницу? <a data-link="chat" href="#" target="_blank" rel="noopener">Напишите нам</a></p>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<script src="app.js"></script>
+</body>
+</html>
