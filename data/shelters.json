@@ -10,16 +10,20 @@
       "updated": "2026-09-26",
       "links": [
         {
-          "label": "ВКонтакте",
-          "url": "https://vk.com/izpriuta"
-        },
-        {
-          "label": "Telegram",
-          "url": "https://t.me/izpriuta"
-        },
-        {
-          "label": "Реквизиты и отчёты",
+          "label": "Сайт приюта",
           "url": "https://uao-priut.ru"
+        },
+        {
+          "label": "Официальный Telegram",
+          "url": "https://t.me/uao_priut"
+        },
+        {
+          "label": "Официальный ВКонтакте",
+          "url": "https://vk.com/uao_priut"
+        },
+        {
+          "label": "Волонтёры во ВКонтакте",
+          "url": "https://vk.com/izpriuta"
         }
       ],
       "money_url": "https://uao-priut.ru",
@@ -233,12 +237,7 @@
       "tab": "Кормильцы кошек",
       "who": "370 стерилизаций за три года",
       "updated": "2026-09-26",
-      "links": [
-        {
-          "label": "Пост куратора ВКонтакте",
-          "url": "https://vk.com/obzunited"
-        }
-      ],
+      "links": [],
       "money_url": "",
       "pvz": [
         {
