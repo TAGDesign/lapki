@@ -128,7 +128,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-09-26",
+      "updated": "2026-09-28",
       "links": [
         {
           "label": "ВКонтакте",
@@ -203,30 +203,6 @@
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
           "type": "constant"
-        },
-        {
-          "title": "Dreamies, 60 г × 8",
-          "note": "лакомства для кошек",
-          "category": "food",
-          "price": 727,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/3536803733/",
-          "type": "count",
-          "need": 5,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Переноска пластиковая 47×30×29 см",
-          "note": "возить животных в клинику",
-          "category": "carrier",
-          "price": 661,
-          "platform": "market",
-          "url": "https://market.yandex.ru/card/-/4310810516",
-          "type": "count",
-          "need": 3,
-          "bought": 0,
-          "closed_at": null
         }
       ],
       "type": "АНО, волонтёрская команда"
