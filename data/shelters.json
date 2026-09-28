@@ -337,7 +337,10 @@
           "price": 1757,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/910250375/detail.aspx",
-          "type": "constant"
+          "type": "count",
+          "need": 50,
+          "bought": 0,
+          "closed_at": null
         },
         {
           "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
@@ -346,7 +349,10 @@
           "price": 913,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
-          "type": "constant"
+          "type": "count",
+          "need": 50,
+          "bought": 0,
+          "closed_at": null
         }
       ],
       "type": "муниципальный приют ЮВАО"
