@@ -151,7 +151,7 @@ function folder(s, i, deliveredCount) {
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="list-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
         <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul></div>
-        ${links ? `<button type="button" class="rowlink" data-toggle="links" aria-expanded="false" aria-controls="links-${s.slug}"><span>Группы и отчёты приюта</span><span class="ic ic-chevron-down" aria-hidden="true"></span></button>
+        ${links ? `<button type="button" class="rowlink" data-toggle="links" aria-expanded="false" aria-controls="links-${s.slug}"><span>Где проверить приют</span><span class="ic ic-chevron-down" aria-hidden="true"></span></button>
         <div class="links" id="links-${s.slug}">${links}</div>` : ''}
         ${delivered}
       </div>
