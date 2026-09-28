@@ -3,6 +3,145 @@
   "channel_url": "https://t.me/designta",
   "shelters": [
     {
+      "slug": "lefedun",
+      "name": "АНО «Лефедун»",
+      "tab": "АНО «Лефедун»",
+      "who": "волонтёры Орехово · 6 тонн корма за август",
+      "updated": "2026-09-28",
+      "links": [
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.com/lefedun"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/lefedun"
+        },
+        {
+          "label": "Реквизиты и отчёты",
+          "url": "https://lefedun.ru"
+        }
+      ],
+      "money_url": "https://lefedun.ru",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        },
+        {
+          "platform": "market",
+          "address": "Шипиловская ул., 46, корп. 1, стр. 2"
+        },
+        {
+          "platform": "wb",
+          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+        }
+      ],
+      "items": [
+        {
+          "title": "Pedigree для собак, 2 кг",
+          "note": "собакам на точке сбора",
+          "category": "food",
+          "price": 574,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/1849866143/",
+          "type": "count",
+          "need": 5,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Purina ONE для стерилизованных кошек, 1,5 кг",
+          "note": "кошкам на точке сбора",
+          "category": "food",
+          "price": 777,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/140701761/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Felix Аппетитные кусочки, паучи 75 г × 26",
+          "note": "в передачки опекунам",
+          "category": "food",
+          "price": 807,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/714958775/",
+          "type": "count",
+          "need": 10,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Инспектор Квадро К, капли для кошек 4–8 кг",
+          "note": "капли от блох и глистов",
+          "category": "meds",
+          "price": 752,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "АНО, волонтёрская команда"
+    },
+    {
+      "slug": "pechatniki",
+      "name": "Приют Печатники",
+      "tab": "Приют Печатники",
+      "who": "муниципальный приют ЮВАО · волонтёры",
+      "updated": "2026-09-28",
+      "links": [
+        {
+          "label": "Сайт волонтёров приюта",
+          "url": "https://pechatniki-pets.ru/"
+        }
+      ],
+      "money_url": "https://pechatniki-pets.ru/",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "ул. Ирины Левченко, 1"
+        },
+        {
+          "platform": "market",
+          "address": "ул. Народного Ополчения, 40к1"
+        },
+        {
+          "platform": "wb",
+          "address": "ул. Народного Ополчения, 40к1"
+        }
+      ],
+      "items": [
+        {
+          "title": "Ем без проблем, консервы для собак с индейкой, 850 г × 6",
+          "note": "влажный корм собакам",
+          "category": "food",
+          "price": 1757,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/910250375/detail.aspx",
+          "type": "count",
+          "need": 50,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
+          "note": "влажный корм котятам",
+          "category": "food",
+          "price": 913,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
+          "type": "count",
+          "need": 50,
+          "bought": 0,
+          "closed_at": null
+        }
+      ],
+      "type": "муниципальный приют ЮВАО"
+    },
+    {
       "slug": "biryulevo",
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
@@ -124,90 +263,6 @@
       "type": "муниципальный приют ЮАО"
     },
     {
-      "slug": "lefedun",
-      "name": "АНО «Лефедун»",
-      "tab": "АНО «Лефедун»",
-      "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-09-28",
-      "links": [
-        {
-          "label": "ВКонтакте",
-          "url": "https://vk.com/lefedun"
-        },
-        {
-          "label": "Telegram",
-          "url": "https://t.me/lefedun"
-        },
-        {
-          "label": "Реквизиты и отчёты",
-          "url": "https://lefedun.ru"
-        }
-      ],
-      "money_url": "https://lefedun.ru",
-      "pvz": [
-        {
-          "platform": "ozon",
-          "address": "Ореховый бул., 7, корп. 1, стр. 2"
-        },
-        {
-          "platform": "market",
-          "address": "Шипиловская ул., 46, корп. 1, стр. 2"
-        },
-        {
-          "platform": "wb",
-          "address": "Ореховый бул., 7, корп. 1, стр. 2"
-        }
-      ],
-      "items": [
-        {
-          "title": "Pedigree для собак, 2 кг",
-          "note": "собакам на точке сбора",
-          "category": "food",
-          "price": 574,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/1849866143/",
-          "type": "count",
-          "need": 5,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Purina ONE для стерилизованных кошек, 1,5 кг",
-          "note": "кошкам на точке сбора",
-          "category": "food",
-          "price": 777,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/140701761/",
-          "type": "count",
-          "need": 10,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Felix Аппетитные кусочки, паучи 75 г × 26",
-          "note": "в передачки опекунам",
-          "category": "food",
-          "price": 807,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/714958775/",
-          "type": "count",
-          "need": 10,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Инспектор Квадро К, капли для кошек 4–8 кг",
-          "note": "капли от блох и глистов",
-          "category": "meds",
-          "price": 752,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
-          "type": "constant"
-        }
-      ],
-      "type": "АНО, волонтёрская команда"
-    },
-    {
       "slug": "kormiltsy",
       "name": "Кормильцы уличных кошек Орехово-Борисово и Зябликово",
       "tab": "Кормильцы кошек",
@@ -301,61 +356,6 @@
         }
       ],
       "type": "куратор, без юрлица"
-    },
-    {
-      "slug": "pechatniki",
-      "name": "Приют Печатники",
-      "tab": "Приют Печатники",
-      "who": "муниципальный приют ЮВАО · волонтёры",
-      "updated": "2026-09-28",
-      "links": [
-        {
-          "label": "Сайт волонтёров приюта",
-          "url": "https://pechatniki-pets.ru/"
-        }
-      ],
-      "money_url": "https://pechatniki-pets.ru/",
-      "pvz": [
-        {
-          "platform": "ozon",
-          "address": "ул. Ирины Левченко, 1"
-        },
-        {
-          "platform": "market",
-          "address": "ул. Народного Ополчения, 40к1"
-        },
-        {
-          "platform": "wb",
-          "address": "ул. Народного Ополчения, 40к1"
-        }
-      ],
-      "items": [
-        {
-          "title": "Ем без проблем, консервы для собак с индейкой, 850 г × 6",
-          "note": "влажный корм собакам",
-          "category": "food",
-          "price": 1757,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/910250375/detail.aspx",
-          "type": "count",
-          "need": 50,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
-          "note": "влажный корм котятам",
-          "category": "food",
-          "price": 913,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
-          "type": "count",
-          "need": 50,
-          "bought": 0,
-          "closed_at": null
-        }
-      ],
-      "type": "муниципальный приют ЮВАО"
     }
   ]
 }
