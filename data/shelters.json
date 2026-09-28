@@ -207,6 +207,127 @@
         }
       ],
       "type": "муниципальный приют ЮВАО"
+    },
+    {
+      "slug": "biryulevo",
+      "name": "Приют Бирюлёво",
+      "tab": "Приют Бирюлёво",
+      "who": "2200 собак · 300 кошек",
+      "updated": "2026-09-28",
+      "links": [
+        {
+          "label": "Сайт приюта",
+          "url": "https://uao-priut.ru"
+        },
+        {
+          "label": "Официальный Telegram",
+          "url": "https://t.me/uao_priut"
+        },
+        {
+          "label": "Официальный ВКонтакте",
+          "url": "https://vk.com/uao_priut"
+        },
+        {
+          "label": "Волонтёры во ВКонтакте",
+          "url": "https://vk.com/izpriuta"
+        }
+      ],
+      "money_url": "https://uao-priut.ru",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Булатниковская ул., 4А"
+        },
+        {
+          "platform": "market",
+          "address": "Булатниковская ул., 6А (постамат)"
+        },
+        {
+          "platform": "wb",
+          "address": "Булатниковская ул., 6А"
+        }
+      ],
+      "items": [
+        {
+          "title": "Royal Canin Gastrointestinal, 2 кг",
+          "note": "кошкам с больным ЖКТ",
+          "category": "food",
+          "price": 4053,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/173456849/detail.aspx",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Farmina Vet Life Renal, 2 кг",
+          "note": "кошкам с больными почками",
+          "category": "food",
+          "price": 3345,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103823720115",
+          "type": "count",
+          "need": 2,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Monge Grill Puppy&Junior, паучи 100 г × 24",
+          "note": "щенкам и собакам-старичкам",
+          "category": "food",
+          "price": 3057,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/5625139442",
+          "need": 5,
+          "type": "count",
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Пелёнки Skippy 60×90, 30 шт",
+          "note": "впитывающие",
+          "category": "hygiene",
+          "price": 449,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Миска Triol из нержавеющей стали, 800 мл",
+          "note": "собакам в вольеры",
+          "category": "food",
+          "price": 317,
+          "platform": "market",
+          "url": "https://market.yandex.ru/card/-/103199658334",
+          "need": 10,
+          "type": "count",
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Наполнитель древесный, 15 кг",
+          "note": "в кошачьи лотки",
+          "category": "hygiene",
+          "price": 433,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/208273638/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Когтеточка-столбик Triol, 30×30×43 см",
+          "note": "кошкам в вольеры",
+          "category": "carrier",
+          "price": 1139,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/167268100/detail.aspx",
+          "need": 3,
+          "type": "count",
+          "bought": 0,
+          "closed_at": null
+        }
+      ],
+      "type": "муниципальный приют ЮАО"
     }
   ]
 }
