@@ -84,6 +84,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .folder{margin-top:14px;background:var(--sheet);border:1px solid var(--ink);border-radius:var(--r-sheet);overflow:clip;scroll-margin-top:0}
 .head{position:sticky;top:0;z-index:3;background:var(--sheet);border-radius:var(--r-sheet) var(--r-sheet) 0 0;padding:16px 16px 12px;border-bottom:1px solid transparent}
 .head.stuck{border-radius:0;border-bottom-color:var(--line)}
+.head .kind{margin-bottom:4px}
 .head h3{font:700 22px/1.1 var(--display);letter-spacing:-.015em;margin-bottom:6px}
 .sheet{padding:0 16px 20px}
 .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline;width:100%}

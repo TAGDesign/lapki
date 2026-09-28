@@ -2,6 +2,7 @@
 
 const FALLBACK_CHAT = 'https://t.me/designta';
 const PLATFORM = { ozon: 'Ozon', market: 'Маркет', wb: 'WB' };
+const PLATFORM_ON = { ozon: 'Ozon', market: 'Маркете', wb: 'WB' };
 const MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
 const VISIBLE = 3;
 const WEEK = 7 * 24 * 60 * 60 * 1000;
@@ -129,7 +130,7 @@ function position(it, shelter, opts = {}) {
   const pvz = (shelter.pvz || []).find(p => p.platform === it.platform);
   const addr = pvz && pvz.address ? pvz.address : '';
   const buy = opts.buy === false ? '' :
-    `<a class="buy" href="${esc(outLink(it.url, shelter.slug, 'buy'))}" target="_blank" rel="noopener" data-track="buy" data-slug="${shelter.slug}" data-addr="${esc(addr)}" aria-label="Купить: ${esc(it.title)} для ${esc(shelter.name)}, ${formatPrice(it.price)} на ${PLATFORM[it.platform] || ''}. Откроется в новой вкладке">Купить<small>${formatPrice(it.price)} · ${PLATFORM[it.platform] || ''}</small></a>`;
+    `<a class="buy" href="${esc(outLink(it.url, shelter.slug, 'buy'))}" target="_blank" rel="noopener" data-track="buy" data-slug="${shelter.slug}" data-addr="${esc(addr)}" data-platform="${PLATFORM_ON[it.platform] || ''}" aria-label="Купить: ${esc(it.title)} для ${esc(shelter.name)}, ${formatPrice(it.price)} на ${PLATFORM_ON[it.platform] || ''}. Откроется в новой вкладке">Купить на ${PLATFORM_ON[it.platform] || ''}<small>${formatPrice(it.price)}</small></a>`;
   const note = opts.noteOverride || it.note;
   return `<div class="pos${opts.extra ? ' extra' : ''}${opts.buy === false ? ' nobuy' : ''}">`
     + `<span class="ind">${ring(it)}${opts.noCount || (!isConstant(it) && !it.bought) ? '' : `<span class="cnt${isConstant(it) ? ' inf' : ''}">${counter(it)}</span>`}</span>`
@@ -152,6 +153,7 @@ function folder(s, i, deliveredCount) {
 
   return `<article class="folder" id="${s.slug}">
     <header class="head">
+      ${s.type ? `<p class="cap kind">${esc(s.type)}</p>` : ''}
       <h3 class="head-name">${esc(s.tab || s.name)}</h3>
       <div class="meta">
         <span class="muted">${esc(s.who)}</span>
@@ -277,7 +279,7 @@ document.addEventListener('click', e => {
     if (addr) {
       // не отменяем переход: вкладка должна открыться тем же нажатием
       copyText(addr);
-      handoff(addr, t.querySelector('small').textContent.split('·').pop().trim());
+      handoff(addr, t.dataset.platform);
     }
   }
 
