@@ -21,6 +21,21 @@ function outLink(url, slug, kind) {
   }
 }
 
+// navigator.clipboard есть только на https; на http и в старых браузерах копируем через скрытое поле
+function copyText(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+  document.body.appendChild(ta);
+  ta.select();
+  ta.setSelectionRange(0, text.length);
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) {}
+  ta.remove();
+  if (!ok && navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+}
+
 function trackClick(kind, slug) {
   // место для ym(ID, 'reachGoal', kind, { shelter: slug })
 }
@@ -244,7 +259,7 @@ document.addEventListener('click', e => {
   }
 
   if (t.matches('.copy')) {
-    if (navigator.clipboard) navigator.clipboard.writeText(t.dataset.copy).catch(() => {});
+    copyText(t.dataset.copy);
     t.classList.add('ok');
     toast('Адрес скопирован<b>' + esc(t.dataset.copy) + '</b>');
     setTimeout(() => t.classList.remove('ok'), 1500);
@@ -261,7 +276,7 @@ document.addEventListener('click', e => {
     const addr = t.dataset.addr;
     if (addr) {
       // не отменяем переход: вкладка должна открыться тем же нажатием
-      if (navigator.clipboard) navigator.clipboard.writeText(addr).catch(() => {});
+      copyText(addr);
       handoff(addr, t.querySelector('small').textContent.split('·').pop().trim());
     }
   }
