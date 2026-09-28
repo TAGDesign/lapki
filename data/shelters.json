@@ -140,6 +140,55 @@
         }
       ],
       "type": "муниципальный приют ЮВАО"
+    },
+    {
+      "slug": "nekrasovka",
+      "name": "Приют Некрасовка",
+      "tab": "Приют Некрасовка",
+      "who": "2700 собак · 350 кошек",
+      "updated": "2026-09-28",
+      "links": [
+        {
+          "label": "Сайт приюта",
+          "url": "https://nekrasovka-priut.ru/"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/nekrasovka_priut"
+        }
+      ],
+      "money_url": "https://nekrasovka-priut.ru/",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Красноказарменная ул., 15к1"
+        },
+        {
+          "platform": "wb",
+          "address": "Красноказарменная ул., 15к1"
+        }
+      ],
+      "items": [
+        {
+          "title": "Зоогурман Big Dog, консервы 850 г × 6",
+          "note": "собакам средних и крупных пород",
+          "category": "food",
+          "price": 1191,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Вкусмясина с говядиной, консервы 850 г × 6",
+          "note": "влажный корм собакам",
+          "category": "food",
+          "price": 1290,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "муниципальный приют ЮВАО"
     }
   ]
 }
