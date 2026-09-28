@@ -186,6 +186,24 @@
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
           "type": "constant"
+        },
+        {
+          "title": "Felix Аппетитные кусочки, курица в желе, 75 г × 26",
+          "note": "влажный корм кошкам",
+          "category": "food",
+          "price": 734,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/714958579/",
+          "type": "constant"
+        },
+        {
+          "title": "Best Dinner Vet Profi Gastro Intestinal, 340 г × 6",
+          "note": "собакам с чувствительным пищеварением",
+          "category": "food",
+          "price": 2724,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/213074157/detail.aspx",
+          "type": "constant"
         }
       ],
       "type": "муниципальный приют ЮВАО"
