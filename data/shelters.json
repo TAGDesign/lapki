@@ -301,6 +301,55 @@
         }
       ],
       "type": "куратор, без юрлица"
+    },
+    {
+      "slug": "pechatniki",
+      "name": "Приют Печатники",
+      "tab": "Приют Печатники",
+      "who": "муниципальный приют ЮВАО · волонтёры",
+      "updated": "2026-09-28",
+      "links": [
+        {
+          "label": "Сайт волонтёров приюта",
+          "url": "https://pechatniki-pets.ru/"
+        }
+      ],
+      "money_url": "https://pechatniki-pets.ru/",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "ул. Ирины Левченко, 1"
+        },
+        {
+          "platform": "market",
+          "address": "ул. Народного Ополчения, 40к1"
+        },
+        {
+          "platform": "wb",
+          "address": "ул. Народного Ополчения, 40к1"
+        }
+      ],
+      "items": [
+        {
+          "title": "Ем без проблем, консервы для собак с индейкой, 850 г × 6",
+          "note": "влажный корм собакам",
+          "category": "food",
+          "price": 1757,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/910250375/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
+          "note": "влажный корм котятам",
+          "category": "food",
+          "price": 913,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "муниципальный приют ЮВАО"
     }
   ]
 }
