@@ -133,7 +133,7 @@ function position(it, shelter, opts = {}) {
   const pvz = (shelter.pvz || []).find(p => p.platform === it.platform);
   const addr = pvz && pvz.address ? pvz.address : '';
   const buy = opts.buy === false ? '' :
-    `<a class="buy" href="${esc(outLink(it.url, shelter.slug, 'buy'))}" target="_blank" rel="noopener" data-track="buy" data-slug="${shelter.slug}" data-addr="${esc(addr)}" data-platform="${PLATFORM_ON[it.platform] || ''}" aria-label="Купить: ${esc(it.title)} для ${esc(shelter.name)}, ${formatPrice(it.price)} на ${PLATFORM_ON[it.platform] || ''}. Откроется в новой вкладке">Купить на ${PLATFORM_ON[it.platform] || ''}<small>${formatPrice(it.price)}</small></a>`;
+    `<a class="buy" href="${esc(outLink(it.url, shelter.slug, 'buy'))}" target="_blank" rel="noopener" data-track="buy" data-slug="${shelter.slug}" data-addr="${esc(addr)}" data-platform="${PLATFORM_ON[it.platform] || ''}" aria-label="Купить: ${esc(it.title)} для ${esc(shelter.name)}, ${formatPrice(it.price)} на ${PLATFORM_ON[it.platform] || ''}. Откроется в новой вкладке">Купить на ${PLATFORM_ON[it.platform] || ''}<small>за ${formatPrice(it.price)}</small></a>`;
   const note = opts.noteOverride || it.note;
   return `<div class="pos${opts.extra ? ' extra' : ''}${opts.buy === false ? ' nobuy' : ''}">`
     + `<span class="ind">${ring(it)}${opts.noCount || (!isConstant(it) && !it.bought) ? '' : `<span class="cnt${isConstant(it) ? ' inf' : ''}">${counter(it)}</span>`}</span>`
@@ -198,6 +198,8 @@ function render(data, delivered) {
   delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + 1; });
   const lists = document.getElementById('lists');
   lists.innerHTML = shelters.map((s, i) => folder(s, i, counts[s.slug] || 0)).join('');
+  lists.querySelectorAll('.folder').forEach(f => { f.classList.add('rv'); f.dataset.rv = 'scroll'; });
+  watchReveal(lists);
 
   // карточка первого экрана и «от N ₽»
   const allOpen = shelters.flatMap(s => s.items.filter(isOpen).map(it => ({ it, s })));
@@ -209,7 +211,9 @@ function render(data, delivered) {
     need.href = '#' + hero.s.slug;
     need.innerHTML = `<span class="cap"><span>${esc(hero.s.tab || hero.s.name)} · обновлён ${formatDate(hero.s.updated)}</span><span class="ic ic-arrow-right" aria-hidden="true"></span></span>` +
       position(hero.it, hero.s, { buy: false, noCount: true });
+    need.classList.add('rv');
     need.hidden = false;
+    requestAnimationFrame(() => revealIn(need, CALM ? 0 : 400));
   }
   if (allOpen.length) {
     const min = Math.min(...allOpen.map(x => x.it.price));
@@ -291,20 +295,93 @@ document.addEventListener('click', e => {
   if (t.dataset.track) trackClick(t.dataset.track, t.dataset.slug || '');
 });
 
-// В блоке доверия открыт только один пункт
-document.addEventListener('toggle', e => {
-  const d = e.target;
-  if (d.tagName !== 'DETAILS' || !d.open) return;
-  d.parentElement.querySelectorAll('details[open]').forEach(o => { if (o !== d) o.open = false; });
-}, true);
+// ——— Анимации (как в проекте М) ———
+const CALM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MS = 800;
+
+function revealIn(el, delay) {
+  el.style.setProperty('--d', (delay || 0) + 'ms');
+  el.classList.add('in');
+}
+
+// первый экран: шапка и заголовок, через 400 подзаголовок, через 800 кнопка
+function revealHero() {
+  document.querySelectorAll('[data-rv="hero"]').forEach(el => revealIn(el, CALM ? 0 : +el.dataset.d || 0));
+}
+
+// остальное — при доскролле
+const scrollIO = 'IntersectionObserver' in window && !CALM
+  ? new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      revealIn(en.target, +en.target.dataset.d || 0);
+      scrollIO.unobserve(en.target);
+    }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' })
+  : null;
+function watchReveal(root) {
+  (root || document).querySelectorAll('[data-rv="scroll"]:not(.in)').forEach(el =>
+    scrollIO ? scrollIO.observe(el) : revealIn(el, 0));
+}
+
+// Аккордеон в блоке доверия: высота + появление текста, открыт один
+function setupAccordion() {
+  const items = [...document.querySelectorAll('.page details')];
+  const timers = new WeakMap();
+  items.forEach(d => {
+    const p = d.querySelector('p');
+    const wrap = document.createElement('div');
+    wrap.className = 'acc';
+    p.before(wrap);
+    wrap.append(p);
+    p.classList.add('acc-in');
+    if (d.open) { d.classList.add('is-open'); p.classList.add('shown'); }
+    else wrap.style.height = '0px';
+    d.querySelector('summary').addEventListener('click', e => {
+      e.preventDefault();
+      if (d.classList.contains('is-open')) close(d);
+      else { items.forEach(o => o !== d && o.classList.contains('is-open') && close(o)); open(d); }
+    });
+  });
+  function parts(d) { const w = d.querySelector('.acc'); return [w, w.firstElementChild]; }
+  function open(d) {
+    const [w, p] = parts(d);
+    clearTimeout(timers.get(d));
+    const from = d.open ? w.offsetHeight : 0;
+    d.open = true;
+    d.classList.add('is-open');
+    if (CALM) { w.style.height = 'auto'; p.classList.add('shown'); return; }
+    const h = p.offsetHeight;
+    w.style.transition = 'none';
+    w.style.height = from + 'px';
+    void w.offsetWidth;
+    w.style.transition = `height ${MS}ms var(--ease-expo)`;
+    w.style.height = h + 'px';
+    p.classList.add('shown');
+    timers.set(d, setTimeout(() => { w.style.transition = 'none'; w.style.height = 'auto'; }, MS));
+  }
+  function close(d) {
+    const [w, p] = parts(d);
+    clearTimeout(timers.get(d));
+    d.classList.remove('is-open');
+    if (CALM) { w.style.height = '0px'; p.classList.remove('shown'); d.open = false; return; }
+    w.style.transition = 'none';
+    w.style.height = w.offsetHeight + 'px';
+    void w.offsetWidth;
+    w.style.transition = `height ${MS}ms var(--ease-expo)`;
+    w.style.height = '0px';
+    p.classList.remove('shown');
+    timers.set(d, setTimeout(() => { d.open = false; }, MS));
+  }
+}
 
 window.addEventListener('hashchange', () => {
   const el = document.getElementById(location.hash.slice(1));
   if (el && el.classList.contains('folder')) goToFolder(el);
 });
 
+const SKELETON = '<div class="folder sk" aria-hidden="true"><div class="sk-b" style="width:40%"></div><div class="sk-b" style="width:70%;height:24px"></div><div class="sk-b" style="width:55%"></div><div class="sk-b" style="height:48px;border-radius:16px"></div><div class="sk-b" style="height:48px;border-radius:16px"></div></div>';
+
 function load() {
-  document.getElementById('lists').innerHTML = '';
+  document.getElementById('lists').innerHTML = SKELETON.repeat(2);
   return Promise.all([
     fetch('data/shelters.json').then(r => r.json()),
     fetch('data/delivered.json').then(r => r.json()).catch(() => []),
@@ -319,6 +396,10 @@ function load() {
       document.getElementById('retry').addEventListener('click', load);
     });
 }
+revealHero();
+watchReveal();
+setupAccordion();
+window.__lapkiReady = true;
 load();
 
 // плашка cookie: показываем один раз, согласие храним в localStorage

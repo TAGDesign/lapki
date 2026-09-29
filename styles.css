@@ -131,7 +131,8 @@ details{border-top:1px solid var(--line)}
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;font-weight:700}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"";flex:none;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22%3E%3Cpath d=%22M6 9.5l6 6 6-6%22 stroke=%22currentColor%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E") center/contain no-repeat}
-details[open] summary::after{transform:rotate(180deg)}
+summary::after{transition:transform .2s ease}
+details.is-open summary::after{transform:rotate(180deg)}
 details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .grid figure{margin:0}
@@ -175,3 +176,21 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 .cookie p{margin:0;color:var(--ink)}
 .cookie a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .cookie button{flex:none;min-height:40px;padding:0 16px;border-radius:12px;background:var(--ink);color:#fff;font-weight:700;font-size:14px}
+
+/* анимации — как в проекте М: 800ms, ease-out-expo, сдвиг 30px, blur 6px */
+:root{--ease-expo:cubic-bezier(.22,1,.36,1)}
+.js .rv{opacity:0;transform:translate3d(0,30px,0);filter:blur(6px)}
+.js .rv.rv-photo{transform:none;filter:blur(20px)}
+.js .rv.in{opacity:1;transform:none;filter:none;transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo),filter .8s var(--ease-expo);transition-delay:var(--d,0ms)}
+.acc{overflow:hidden}
+.acc-in{opacity:0;transform:translate3d(0,30px,0);filter:blur(6px);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo),filter .8s var(--ease-expo)}
+.acc-in.shown{opacity:1;transform:none;filter:none}
+/* скелетон, пока грузятся списки */
+.sk{padding:18px 16px;display:grid;gap:12px}
+.sk-b{height:14px;border-radius:8px;background:var(--line);opacity:.5;animation:skPulse 1.25s ease-in-out infinite}
+@keyframes skPulse{0%,100%{opacity:.5}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .js .rv,.acc-in{opacity:1;transform:none;filter:none;transition:none}
+  .sk-b{animation:none}
+  summary::after{transition:none}
+}

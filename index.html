@@ -21,11 +21,12 @@
   <link rel="preload" href="assets/fonts/inter-tight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__lapkiReady)document.documentElement.classList.remove('js')},4000)</script>
 </head>
 <body>
 <a class="skip" href="#lists">Перейти к спискам</a>
 <div class="col">
-  <header class="top">
+  <header class="top rv" data-rv="hero" data-d="0">
     <a class="brand" href="./"><img src="lapki-mark.png" alt="" width="36" height="36">лапки</a>
     <a class="pill" data-link="channel" href="#" target="_blank" rel="noopener" data-track="channel">Telegram</a>
   </header>
@@ -33,32 +34,32 @@
   <main>
     <section class="hero" aria-labelledby="h1">
       <div>
-        <h1 id="h1">Вот что нужно приютам сегодня</h1>
-        <p class="lead">Заказываете на маркетплейсе в пункт выдачи рядом с приютом — волонтёры заберут.</p>
+        <h1 id="h1" class="rv" data-rv="hero" data-d="0">Вот что нужно приютам сегодня</h1>
+        <p class="lead rv" data-rv="hero" data-d="400">Заказываете на маркетплейсе в пункт выдачи рядом с приютом — волонтёры заберут.</p>
       </div>
 
       <div class="scene">
-        <div class="duo" aria-hidden="true">
+        <div class="duo rv rv-photo" data-rv="hero" data-d="0" aria-hidden="true">
           <div class="ill ill-l"><img src="assets/ill-person.webp" alt="" onerror="this.remove()"></div>
           <div class="ill ill-r"><img src="assets/ill-animals.webp" alt="" onerror="this.remove()"></div>
         </div>
         <a class="need" id="hero-need" href="#" hidden></a>
       </div>
 
-      <div>
+      <div class="rv" data-rv="hero" data-d="800">
         <a class="cta" href="#lists" data-track="cta">Смотреть списки</a>
         <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
       </div>
     </section>
 
-    <section class="intro">
+    <section class="intro rv" data-rv="scroll">
       <p>Списки нам присылают волонтёры приютов, обновляем раз в день. Рядом с кнопкой «Купить» — самая низкая цена из трёх площадок: Ozon, Маркета и Wildberries. Считаем без персональных скидок, кошельков и банковских карт.</p>
     </section>
 
     <h2 class="sr-only">Кому нужна помощь</h2>
     <section class="folders" id="lists" aria-label="Получатели"></section>
 
-    <section class="page dark" aria-labelledby="h-how">
+    <section class="page dark rv" data-rv="scroll" aria-labelledby="h-how">
       <h2 id="h-how">Как заказать</h2>
       <ol class="steps">
         <li><b>Выберите позицию и нажмите «Купить»</b><span>Откроется карточка товара на маркетплейсе</span></li>
@@ -68,7 +69,7 @@
       </ol>
     </section>
 
-    <section class="page light" aria-labelledby="h-trust">
+    <section class="page light rv" data-rv="scroll" aria-labelledby="h-trust">
       <h2 id="h-trust">Почему нам можно доверять</h2>
       <details open>
         <summary>Кто делает и зачем</summary>
@@ -96,7 +97,7 @@
     </section>
   </main>
 
-  <footer class="foot">
+  <footer class="foot rv" data-rv="scroll">
     <p class="brand">лапки</p>
     <p id="money-line">Удобнее помочь деньгами — реквизиты приютов: <span id="money-links"></span></p>
     <p>Позиция уже закрыта или ссылка ведёт не туда? <a data-link="chat" href="#" target="_blank" rel="noopener" data-track="chat">Напишите нам</a></p>
