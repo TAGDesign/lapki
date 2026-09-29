@@ -183,8 +183,8 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 .js .rv.rv-photo{transform:none;filter:blur(20px)}
 .js .rv.in{opacity:1;transform:none;filter:none;transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo),filter .8s var(--ease-expo);transition-delay:var(--d,0ms)}
 .acc{overflow:hidden}
-.acc-in{opacity:0;transform:translate3d(0,30px,0);filter:blur(6px);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo),filter .8s var(--ease-expo)}
-.acc-in.shown{opacity:1;transform:none;filter:none}
+.acc-in{opacity:0;transform:translate3d(0,30px,0);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo)}
+.acc-in.shown{opacity:1;transform:none}
 /* скелетон, пока грузятся списки */
 .sk{padding:18px 16px;display:grid;gap:12px}
 .sk-b{height:14px;border-radius:8px;background:var(--line);opacity:.5;animation:skPulse 1.25s ease-in-out infinite}

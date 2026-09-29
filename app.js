@@ -327,12 +327,14 @@ function setupAccordion() {
   const items = [...document.querySelectorAll('.page details')];
   const timers = new WeakMap();
   items.forEach(d => {
-    const p = d.querySelector('p');
+    // всё содержимое пункта (там может быть несколько абзацев) — в одну обёртку
     const wrap = document.createElement('div');
     wrap.className = 'acc';
-    p.before(wrap);
+    const p = document.createElement('div');
+    p.className = 'acc-in';
+    p.append(...[...d.children].filter(el => el.tagName !== 'SUMMARY'));
     wrap.append(p);
-    p.classList.add('acc-in');
+    d.append(wrap);
     if (d.open) { d.classList.add('is-open'); p.classList.add('shown'); }
     else wrap.style.height = '0px';
     d.querySelector('summary').addEventListener('click', e => {
