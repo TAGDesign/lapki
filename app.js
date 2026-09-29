@@ -167,12 +167,13 @@ function folder(s, i, deliveredCount) {
       <div class="body" id="body-${s.slug}">
         <div class="list" id="list-${s.slug}">
           <p class="cap">Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</p>
-          ${open.map((it, n) => position(it, s, { extra: n >= VISIBLE })).join('')}
-          ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="list-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
+          ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
+          ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
+          ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
         <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul></div>
-        ${links ? `<button type="button" class="rowlink" data-toggle="links" aria-expanded="false" aria-controls="links-${s.slug}"><span>Где проверить приют</span><span class="ic ic-chevron-down" aria-hidden="true"></span></button>
-        <div class="links" id="links-${s.slug}">${links}</div>` : ''}
+        ${links ? `<button type="button" class="rowlink" data-toggle="links" aria-expanded="false" aria-controls="links-${s.slug}"><span>${/волонт/i.test(s.type || '') ? 'Где проверить команду' : 'Где проверить приют'}</span><span class="ic ic-chevron-down" aria-hidden="true"></span></button>
+        <div class="acc" id="links-${s.slug}" style="height:0px"><div class="acc-in"><div class="links">${links}</div></div></div>` : ''}
         ${delivered}
       </div>
     </div>
@@ -258,16 +259,11 @@ document.addEventListener('click', e => {
   if (!t) return;
 
   if (t.matches('.more')) {
-    const list = t.closest('.list');
-    const all = list.classList.toggle('all');
+    const all = t.getAttribute('aria-expanded') !== 'true';
     const n = +t.dataset.rest;
     t.textContent = all ? 'Свернуть' : `Ещё ${n} ${plural(n, 'позиция', 'позиции', 'позиций')}`;
     t.setAttribute('aria-expanded', all);
-    if (all) {
-      const first = list.querySelector('.pos.extra');
-      const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (first) first.scrollIntoView({ block: 'center', behavior: calm ? 'auto' : 'smooth' });
-    }
+    slide(document.getElementById(t.getAttribute('aria-controls')), all);
     return;
   }
 
@@ -282,8 +278,9 @@ document.addEventListener('click', e => {
 
   if (t.dataset.toggle === 'links') {
     if (t.getAttribute('aria-expanded') !== 'true') trackClick('verify', t.getAttribute('aria-controls').replace('links-', ''));
-    const on = t.nextElementSibling.classList.toggle('on');
+    const on = t.getAttribute('aria-expanded') !== 'true';
     t.setAttribute('aria-expanded', on);
+    slide(document.getElementById(t.getAttribute('aria-controls')), on);
     return;
   }
 
@@ -332,6 +329,31 @@ const scrollIO = 'IntersectionObserver' in window && !CALM
 function watchReveal(root) {
   (root || document).querySelectorAll('[data-rv="scroll"]:not(.in)').forEach(el =>
     scrollIO ? scrollIO.observe(el) : revealIn(el, 0));
+}
+
+// Раскрытие блока: высота + появление содержимого (сдвиг и прозрачность), 800 мс
+// wrap — .acc, внутри один .acc-in
+function slide(wrap, show, done) {
+  const inner = wrap.firstElementChild;
+  clearTimeout(wrap._t);
+  if (CALM) {
+    wrap.style.height = show ? 'auto' : '0px';
+    inner.classList.toggle('shown', show);
+    if (done) done();
+    return;
+  }
+  const from = wrap.offsetHeight;
+  const to = show ? inner.offsetHeight : 0;
+  wrap.style.transition = 'none';
+  wrap.style.height = from + 'px';
+  void wrap.offsetWidth;
+  wrap.style.transition = `height ${MS}ms var(--ease-expo)`;
+  wrap.style.height = to + 'px';
+  inner.classList.toggle('shown', show);
+  wrap._t = setTimeout(() => {
+    if (show) { wrap.style.transition = 'none'; wrap.style.height = 'auto'; }
+    if (done) done();
+  }, MS);
 }
 
 // Аккордеон в блоке доверия: высота + появление текста, открыт один

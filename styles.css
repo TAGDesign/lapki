@@ -93,9 +93,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 
 .body{padding-top:4px}
 .list .pos{padding:14px 0;border-top:1px solid var(--line)}
-.list .pos:first-of-type{margin-top:8px}
-.list .pos.extra{display:none}
-.list.all .pos.extra{display:grid}
+.list > .pos:first-of-type{margin-top:8px}
 .more{display:block;width:100%;border:1px solid var(--ink);border-radius:999px;padding:12px;font-weight:700;margin-top:4px;text-align:center}
 .pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin-top:20px}
 .pvz ul{margin-top:8px}
@@ -106,10 +104,9 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .copy .ic{width:16px;height:16px;flex:none}
 .copy.ok{background:var(--done)}
 .rowlink{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:16px 0 4px;margin-top:12px;min-height:44px;font-weight:700;width:100%}
-.rowlink .ic{width:20px;height:20px}
+.rowlink .ic{width:20px;height:20px;transition:transform .2s ease}
 .rowlink[aria-expanded="true"] .ic{transform:rotate(180deg)}
-.links{display:none;flex-wrap:wrap;gap:8px;padding-top:12px}
-.links.on{display:flex}
+.links{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px}
 .links a{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
 
 .load-error{padding:24px 2px}
