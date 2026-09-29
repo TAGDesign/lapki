@@ -215,7 +215,8 @@ function render(data, delivered) {
     need.classList.remove('need-wait');
     need.removeAttribute('aria-hidden');
     need.removeAttribute('tabindex');
-    setTimeout(() => revealIn(need, CALM ? 0 : 1100), 0);
+    needReady = true;
+    revealNeed();
   }
   if (!hero) need.hidden = true;
   if (allOpen.length) {
@@ -308,8 +309,16 @@ function revealIn(el, delay) {
 }
 
 // первый экран: сначала иллюстрация (только из размытия, без сдвига), потом шапка и заголовок, подзаголовок, кнопка
+let heroT0 = null, needReady = false;
 function revealHero() {
+  heroT0 = performance.now();
   document.querySelectorAll('[data-rv="hero"]').forEach(el => revealIn(el, CALM ? 0 : +el.dataset.d || 0));
+  revealNeed();
+}
+// карточка — через 900 от начала первого экрана, до кнопки (1300); данные могут прийти раньше или позже
+function revealNeed() {
+  if (heroT0 === null || !needReady) return;
+  revealIn(document.getElementById('hero-need'), CALM ? 0 : Math.max(0, heroT0 + 900 - performance.now()));
 }
 
 // остальное — при доскролле
