@@ -194,3 +194,5 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
   .sk-b{animation:none}
   summary::after{transition:none}
 }
+/* место под карточку держим сразу, чтобы экран не прыгал, когда подгрузятся данные */
+#hero-need[hidden]{display:block;visibility:hidden;min-height:98px}

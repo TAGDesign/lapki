@@ -21,12 +21,12 @@
   <link rel="preload" href="assets/fonts/inter-tight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__lapkiReady)document.documentElement.classList.remove('js')},4000)</script>
+  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';document.documentElement.classList.add('js');setTimeout(function(){if(!window.__lapkiReady)document.documentElement.classList.remove('js')},4000)</script>
 </head>
 <body>
 <a class="skip" href="#lists">Перейти к спискам</a>
 <div class="col">
-  <header class="top rv" data-rv="hero" data-d="0">
+  <header class="top rv" data-rv="hero" data-d="300">
     <a class="brand" href="./"><img src="lapki-mark.png" alt="" width="36" height="36">лапки</a>
     <a class="pill" data-link="channel" href="#" target="_blank" rel="noopener" data-track="channel">Telegram</a>
   </header>
@@ -34,8 +34,8 @@
   <main>
     <section class="hero" aria-labelledby="h1">
       <div>
-        <h1 id="h1" class="rv" data-rv="hero" data-d="0">Вот что нужно приютам сегодня</h1>
-        <p class="lead rv" data-rv="hero" data-d="400">Заказываете на маркетплейсе в пункт выдачи рядом с приютом — волонтёры заберут.</p>
+        <h1 id="h1" class="rv" data-rv="hero" data-d="300">Вот что нужно приютам сегодня</h1>
+        <p class="lead rv" data-rv="hero" data-d="700">Заказываете на маркетплейсе в пункт выдачи рядом с приютом — волонтёры заберут.</p>
       </div>
 
       <div class="scene">
@@ -46,7 +46,7 @@
         <a class="need" id="hero-need" href="#" hidden></a>
       </div>
 
-      <div class="rv" data-rv="hero" data-d="800">
+      <div class="rv" data-rv="hero" data-d="1100">
         <a class="cta" href="#lists" data-track="cta">Смотреть списки</a>
         <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
       </div>

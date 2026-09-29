@@ -213,7 +213,7 @@ function render(data, delivered) {
       position(hero.it, hero.s, { buy: false, noCount: true });
     need.classList.add('rv');
     need.hidden = false;
-    requestAnimationFrame(() => revealIn(need, CALM ? 0 : 400));
+    setTimeout(() => revealIn(need, CALM ? 0 : 1100), 0);
   }
   if (allOpen.length) {
     const min = Math.min(...allOpen.map(x => x.it.price));
@@ -304,7 +304,7 @@ function revealIn(el, delay) {
   el.classList.add('in');
 }
 
-// первый экран: шапка и заголовок, через 400 подзаголовок, через 800 кнопка
+// первый экран: сначала иллюстрация (только из размытия, без сдвига), потом шапка и заголовок, подзаголовок, кнопка
 function revealHero() {
   document.querySelectorAll('[data-rv="hero"]').forEach(el => revealIn(el, CALM ? 0 : +el.dataset.d || 0));
 }
@@ -398,7 +398,10 @@ function load() {
       document.getElementById('retry').addEventListener('click', load);
     });
 }
-revealHero();
+// показываем первый экран, когда догрузились шрифты: иначе текст над иллюстрацией
+// перестраивается под новый шрифт и сдвигает её вниз
+Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 1000))])
+  .then(() => revealHero());
 watchReveal();
 setupAccordion();
 window.__lapkiReady = true;
