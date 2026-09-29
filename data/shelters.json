@@ -7,7 +7,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-09-28",
+      "updated": "2026-09-29",
       "links": [
         {
           "label": "ВКонтакте",
@@ -26,61 +26,21 @@
       "pvz": [
         {
           "platform": "ozon",
-          "address": "Ореховый бул., 7, корп. 1, стр. 2"
-        },
-        {
-          "platform": "market",
-          "address": "Шипиловская ул., 46, корп. 1, стр. 2"
+          "address": "Большая Филёвская ул., 45к2"
         },
         {
           "platform": "wb",
-          "address": "Ореховый бул., 7, корп. 1, стр. 2"
+          "address": "Большая Филёвская ул., 43"
         }
       ],
       "items": [
         {
-          "title": "Pedigree для собак, 2 кг",
-          "note": "собакам на точке сбора",
+          "title": "Award Urinary для кошек, курица и клюква, 10 кг",
+          "note": "стерилизованным кошкам, профилактика МКБ",
           "category": "food",
-          "price": 783,
+          "price": 6162,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/538521414/detail.aspx",
-          "type": "count",
-          "need": 5,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Purina ONE для стерилизованных кошек, 1,5 кг",
-          "note": "кошкам на точке сбора",
-          "category": "food",
-          "price": 812,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/63846890/detail.aspx",
-          "type": "count",
-          "need": 10,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Felix Аппетитные кусочки, курица в желе, 75 г × 26",
-          "note": "в передачки опекунам",
-          "category": "food",
-          "price": 734,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/714958579/",
-          "type": "count",
-          "need": 10,
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Инспектор Квадро К, капли для кошек 4–8 кг",
-          "note": "капли от блох и глистов",
-          "category": "meds",
-          "price": 752,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/461532966/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/1238453579/detail.aspx",
           "type": "constant"
         }
       ],
