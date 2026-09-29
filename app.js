@@ -37,8 +37,11 @@ function copyText(text) {
   if (!ok && navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
 }
 
+const YM_ID = 113157493;
+// цели Метрики: buy / money / groups / chat / channel / copy / verify / cta
 function trackClick(kind, slug) {
-  // место для ym(ID, 'reachGoal', kind, { shelter: slug })
+  if (typeof ym !== 'function') return;
+  ym(YM_ID, 'reachGoal', kind, slug ? { shelter: slug } : undefined);
 }
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -261,6 +264,7 @@ document.addEventListener('click', e => {
   }
 
   if (t.matches('.copy')) {
+    trackClick('copy', t.closest('.folder')?.id || '');
     copyText(t.dataset.copy);
     t.classList.add('ok');
     toast('Адрес скопирован<b>' + esc(t.dataset.copy) + '</b>');
@@ -269,6 +273,7 @@ document.addEventListener('click', e => {
   }
 
   if (t.dataset.toggle === 'links') {
+    if (t.getAttribute('aria-expanded') !== 'true') trackClick('verify', t.getAttribute('aria-controls').replace('links-', ''));
     const on = t.nextElementSibling.classList.toggle('on');
     t.setAttribute('aria-expanded', on);
     return;

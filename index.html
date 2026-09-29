@@ -27,7 +27,7 @@
 <div class="col">
   <header class="top">
     <a class="brand" href="./"><img src="lapki-mark.png" alt="" width="36" height="36">лапки</a>
-    <a class="pill" data-link="channel" href="#" target="_blank" rel="noopener">Telegram</a>
+    <a class="pill" data-link="channel" href="#" target="_blank" rel="noopener" data-track="channel">Telegram</a>
   </header>
 
   <main>
@@ -46,7 +46,7 @@
       </div>
 
       <div>
-        <a class="cta" href="#lists">Смотреть списки</a>
+        <a class="cta" href="#lists" data-track="cta">Смотреть списки</a>
         <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
       </div>
     </section>
@@ -64,7 +64,7 @@
         <li><b>Выберите позицию и нажмите «Купить»</b><span>Откроется карточка товара на маркетплейсе</span></li>
         <li><b>Доставка — в пункт выдачи из папки приюта</b><span>Получателем укажите себя — посылку заберут по коду. В сам приют не везём: адрес не публикуют, иначе по нему подбрасывают животных</span></li>
         <li><b>Пришлите код получения в наш чат</b><span>Код придёт в приложении маркетплейса, когда заказ доедет до пункта. Передадим его волонтёрам и напишем, когда заберут</span>
-          <a class="chat" data-link="chat" href="#" target="_blank" rel="noopener">Открыть чат в Telegram</a></li>
+          <a class="chat" data-link="chat" href="#" target="_blank" rel="noopener" data-track="chat">Открыть чат в Telegram</a></li>
       </ol>
     </section>
 
@@ -99,11 +99,16 @@
   <footer class="foot">
     <p class="brand">лапки</p>
     <p id="money-line">Удобнее помочь деньгами — реквизиты приютов: <span id="money-links"></span></p>
-    <p>Позиция уже закрыта или ссылка ведёт не туда? <a data-link="chat" href="#" target="_blank" rel="noopener">Напишите нам</a></p>
-    <p>Приют хочет попасть на страницу? <a data-link="chat" href="#" target="_blank" rel="noopener">Напишите нам</a></p>
+    <p>Позиция уже закрыта или ссылка ведёт не туда? <a data-link="chat" href="#" target="_blank" rel="noopener" data-track="chat">Напишите нам</a></p>
+    <p>Приют хочет попасть на страницу? <a data-link="chat" href="#" target="_blank" rel="noopener" data-track="chat">Напишите нам</a></p>
   </footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(113157493,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113157493" style="position:absolute;left:-9999px" alt=""></div></noscript>
 <script src="app.js"></script>
 </body>
 </html>
