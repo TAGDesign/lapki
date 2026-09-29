@@ -212,9 +212,12 @@ function render(data, delivered) {
     need.innerHTML = `<span class="cap"><span>${esc(hero.s.tab || hero.s.name)} · обновлён ${formatDate(hero.s.updated)}</span><span class="ic ic-arrow-right" aria-hidden="true"></span></span>` +
       position(hero.it, hero.s, { buy: false, noCount: true });
     need.classList.add('rv');
-    need.hidden = false;
+    need.classList.remove('need-wait');
+    need.removeAttribute('aria-hidden');
+    need.removeAttribute('tabindex');
     setTimeout(() => revealIn(need, CALM ? 0 : 1100), 0);
   }
+  if (!hero) need.hidden = true;
   if (allOpen.length) {
     const min = Math.min(...allOpen.map(x => x.it.price));
     document.getElementById('min-price').textContent = ' · от ' + formatPrice(min);

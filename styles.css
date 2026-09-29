@@ -195,4 +195,4 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
   summary::after{transition:none}
 }
 /* место под карточку держим сразу, чтобы экран не прыгал, когда подгрузятся данные */
-#hero-need[hidden]{display:block;visibility:hidden;min-height:98px}
+.need-wait{visibility:hidden;min-height:98px}
