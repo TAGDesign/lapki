@@ -320,3 +320,17 @@ function load() {
     });
 }
 load();
+
+// плашка cookie: показываем один раз, согласие храним в localStorage
+(() => {
+  const el = document.getElementById('cookie');
+  if (!el) return;
+  let seen = false;
+  try { seen = localStorage.getItem('lapki-cookie') === '1'; } catch (e) {}
+  if (seen) return;
+  el.hidden = false;
+  document.getElementById('cookie-ok').addEventListener('click', () => {
+    el.hidden = true;
+    try { localStorage.setItem('lapki-cookie', '1'); } catch (e) {}
+  });
+})();
