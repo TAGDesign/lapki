@@ -213,7 +213,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-09-28",
+      "updated": "2026-09-29",
       "links": [
         {
           "label": "Сайт приюта",
@@ -249,44 +249,80 @@
       ],
       "items": [
         {
-          "title": "Royal Canin Gastrointestinal, 2 кг",
+          "title": "Royal Canin Gastrointestinal для собак, 2 кг",
+          "note": "собакам с больным ЖКТ",
+          "category": "food",
+          "price": 3337,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/131450156/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Organic Choice Vet Gastrointestinal, консервы 340 г × 6",
+          "note": "собакам с больным ЖКТ",
+          "category": "food",
+          "price": 1826,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/250586634/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Royal Canin Hypoallergenic DR21 для собак, 1,5 кг",
+          "note": "собакам с аллергией",
+          "category": "food",
+          "price": 3215,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/593184445/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Royal Canin Gastrointestinal для кошек, 2 кг",
           "note": "кошкам с больным ЖКТ",
           "category": "food",
           "price": 4053,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/173456849/detail.aspx",
-          "type": "count",
-          "need": 3,
-          "bought": 0,
-          "closed_at": null
+          "type": "constant"
         },
         {
-          "title": "Farmina Vet Life Renal, 2 кг",
-          "note": "кошкам с больными почками",
+          "title": "Farmina Vet Life UltraHypo для кошек, 2 кг",
+          "note": "кошкам с аллергией",
           "category": "food",
-          "price": 3345,
-          "platform": "market",
-          "url": "https://market.yandex.ru/card/-/103823720115",
-          "type": "count",
-          "need": 2,
-          "bought": 0,
-          "closed_at": null
+          "price": 3761,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/768225751/detail.aspx",
+          "type": "constant"
         },
         {
-          "title": "Monge Grill Puppy&Junior, паучи 100 г × 24",
-          "note": "щенкам и собакам-старичкам",
+          "title": "Brit Premium, консервы для собак 850 г × 6",
+          "note": "влажный корм собакам",
           "category": "food",
-          "price": 3057,
-          "platform": "market",
-          "url": "https://market.yandex.ru/card/-/5625139442",
-          "need": 5,
-          "type": "count",
-          "bought": 0,
-          "closed_at": null
+          "price": 1660,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/229024472/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Felix Аппетитные кусочки, курица в желе, 75 г × 26",
+          "note": "влажный корм кошкам",
+          "category": "food",
+          "price": 734,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/714958579/",
+          "type": "constant"
+        },
+        {
+          "title": "Фениквантел 100 мг для собак, 5 таблеток",
+          "note": "от глистов, собакам от 8 кг",
+          "category": "meds",
+          "price": 199,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/3284254382/",
+          "type": "constant"
         },
         {
           "title": "Пелёнки Skippy 60×90, 30 шт",
-          "note": "впитывающие",
+          "note": "в хоспис и стационар",
           "category": "hygiene",
           "price": 449,
           "platform": "wb",
@@ -294,37 +330,13 @@
           "type": "constant"
         },
         {
-          "title": "Миска Triol из нержавеющей стали, 800 мл",
-          "note": "собакам в вольеры",
-          "category": "food",
-          "price": 317,
-          "platform": "market",
-          "url": "https://market.yandex.ru/card/-/103199658334",
-          "need": 10,
-          "type": "count",
-          "bought": 0,
-          "closed_at": null
-        },
-        {
-          "title": "Наполнитель древесный, 15 кг",
-          "note": "в кошачьи лотки",
+          "title": "Пенка Seni Care для лежачих, 500 мл",
+          "note": "мыть лежачих животных",
           "category": "hygiene",
-          "price": 433,
+          "price": 934,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/208273638/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/781721332/detail.aspx",
           "type": "constant"
-        },
-        {
-          "title": "Когтеточка-столбик Triol, 30×30×43 см",
-          "note": "кошкам в вольеры",
-          "category": "carrier",
-          "price": 1139,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/167268100/detail.aspx",
-          "need": 3,
-          "type": "count",
-          "bought": 0,
-          "closed_at": null
         }
       ],
       "type": "муниципальный приют ЮАО"
