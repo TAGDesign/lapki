@@ -419,8 +419,9 @@ const SKELETON = '<div class="folder sk" aria-hidden="true"><div class="sk-b" st
 function load() {
   document.getElementById('lists').innerHTML = SKELETON.repeat(2);
   return Promise.all([
-    fetch('data/shelters.json').then(r => r.json()),
-    fetch('data/delivered.json').then(r => r.json()).catch(() => []),
+    // списки всегда берём свежие: браузер на телефоне иначе может сутками показывать сохранённую копию
+    fetch('data/shelters.json?t=' + Date.now(), { cache: 'no-store' }).then(r => r.json()),
+    fetch('data/delivered.json?t=' + Date.now(), { cache: 'no-store' }).then(r => r.json()).catch(() => []),
   ]).then(([data, delivered]) => render(data, Array.isArray(delivered) ? delivered : []))
     .catch(() => {
       // чат — единственный запасной канал связи, он должен работать и без данных
