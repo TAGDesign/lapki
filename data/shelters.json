@@ -183,6 +183,15 @@
       ],
       "items": [
         {
+          "title": "Фениквантел 100 мг для собак, 5 таблеток",
+          "note": "от глистов, собакам от 8 кг",
+          "category": "meds",
+          "price": 200,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/3284254382/",
+          "type": "constant"
+        },
+        {
           "title": "Royal Canin Gastrointestinal для собак, 2 кг",
           "note": "собакам с больным ЖКТ",
           "category": "food",
@@ -198,15 +207,6 @@
           "price": 1826,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/250586634/detail.aspx",
-          "type": "constant"
-        },
-        {
-          "title": "Фениквантел 100 мг для собак, 5 таблеток",
-          "note": "от глистов, собакам от 8 кг",
-          "category": "meds",
-          "price": 200,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
         },
         {
