@@ -308,6 +308,15 @@
       ],
       "items": [
         {
+          "title": "Award Urinary для кошек, курица, 1,5 кг",
+          "note": "стерилизованным кошкам, профилактика МКБ",
+          "category": "food",
+          "price": 1214,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/231853861/detail.aspx",
+          "type": "constant"
+        },
+        {
           "title": "Award Urinary для кошек, курица и клюква, 10 кг",
           "note": "стерилизованным кошкам, профилактика МКБ",
           "category": "food",
