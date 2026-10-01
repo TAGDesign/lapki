@@ -31,6 +31,15 @@
       ],
       "items": [
         {
+          "title": "Зоогурман, консервы для собак, 850 г",
+          "note": "одна банка — влажный корм собакам",
+          "category": "food",
+          "price": 251,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/431170565/detail.aspx",
+          "type": "constant"
+        },
+        {
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
@@ -97,6 +106,15 @@
         }
       ],
       "items": [
+        {
+          "title": "Brit, консервы для собак, 850 г",
+          "note": "одна банка — влажный корм собакам",
+          "category": "food",
+          "price": 244,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/314994446/detail.aspx",
+          "type": "constant"
+        },
         {
           "title": "Ем без проблем, консервы для собак с индейкой, 850 г × 6",
           "note": "влажный корм собакам",
@@ -183,6 +201,15 @@
           "type": "constant"
         },
         {
+          "title": "Фениквантел 100 мг для собак, 5 таблеток",
+          "note": "от глистов, собакам от 8 кг",
+          "category": "meds",
+          "price": 200,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/3284254382/",
+          "type": "constant"
+        },
+        {
           "title": "Royal Canin Hypoallergenic DR21 для собак, 1,5 кг",
           "note": "собакам с аллергией",
           "category": "food",
@@ -225,15 +252,6 @@
           "price": 851,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
-          "type": "constant"
-        },
-        {
-          "title": "Фениквантел 100 мг для собак, 5 таблеток",
-          "note": "от глистов, собакам от 8 кг",
-          "category": "meds",
-          "price": 200,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
         },
         {
