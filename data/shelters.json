@@ -3,55 +3,78 @@
   "channel_url": "https://t.me/designta",
   "shelters": [
     {
-      "slug": "lefedun",
-      "name": "АНО «Лефедун»",
-      "tab": "АНО «Лефедун»",
-      "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-09-29",
+      "slug": "nekrasovka",
+      "name": "Приют Некрасовка",
+      "tab": "Приют Некрасовка",
+      "who": "2700 собак · 350 кошек",
+      "updated": "2026-10-01",
       "links": [
         {
-          "label": "ВКонтакте",
-          "url": "https://vk.com/lefedun"
+          "label": "Сайт приюта",
+          "url": "https://nekrasovka-priut.ru/"
         },
         {
           "label": "Telegram",
-          "url": "https://t.me/lefedun"
-        },
-        {
-          "label": "Реквизиты и отчёты",
-          "url": "https://lefedun.ru"
+          "url": "https://t.me/nekrasovka_priut"
         }
       ],
-      "money_url": "https://lefedun.ru",
+      "money_url": "https://nekrasovka-priut.ru/",
       "pvz": [
         {
           "platform": "ozon",
-          "address": "Большая Филёвская ул., 45к2"
+          "address": "Красноказарменная ул., 15к1"
         },
         {
           "platform": "wb",
-          "address": "Большая Филёвская ул., 43"
+          "address": "Красноказарменная ул., 15к1"
         }
       ],
       "items": [
         {
-          "title": "Award Urinary для кошек, курица и клюква, 10 кг",
-          "note": "стерилизованным кошкам, профилактика МКБ",
+          "title": "Felix Природа вкуса, курица, 75 г × 26",
+          "note": "влажный корм кошкам",
           "category": "food",
-          "price": 6162,
+          "price": 851,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/1238453579/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Зоогурман Big Dog, консервы 850 г × 6",
+          "note": "собакам средних и крупных пород",
+          "category": "food",
+          "price": 1212,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Вкусмясина с говядиной, консервы 850 г × 6",
+          "note": "влажный корм собакам",
+          "category": "food",
+          "price": 1220,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Best Dinner Vet Profi Gastro Intestinal, 340 г × 6",
+          "note": "собакам с чувствительным пищеварением",
+          "category": "food",
+          "price": 2724,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/213074157/detail.aspx",
           "type": "constant"
         }
       ],
-      "type": "волонтёрская команда"
+      "type": "муниципальный приют ЮВАО"
     },
     {
       "slug": "pechatniki",
       "name": "Приют Печатники",
       "tab": "Приют Печатники",
       "who": "муниципальный приют ЮВАО · волонтёры",
-      "updated": "2026-09-28",
+      "updated": "2026-10-01",
       "links": [
         {
           "label": "Сайт волонтёров приюта",
@@ -90,9 +113,9 @@
           "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
           "note": "влажный корм котятам",
           "category": "food",
-          "price": 892,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/1421775239/",
+          "price": 913,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
           "type": "count",
           "need": 50,
           "bought": 0,
@@ -102,78 +125,11 @@
       "type": "муниципальный приют ЮВАО"
     },
     {
-      "slug": "nekrasovka",
-      "name": "Приют Некрасовка",
-      "tab": "Приют Некрасовка",
-      "who": "2700 собак · 350 кошек",
-      "updated": "2026-09-28",
-      "links": [
-        {
-          "label": "Сайт приюта",
-          "url": "https://nekrasovka-priut.ru/"
-        },
-        {
-          "label": "Telegram",
-          "url": "https://t.me/nekrasovka_priut"
-        }
-      ],
-      "money_url": "https://nekrasovka-priut.ru/",
-      "pvz": [
-        {
-          "platform": "ozon",
-          "address": "Красноказарменная ул., 15к1"
-        },
-        {
-          "platform": "wb",
-          "address": "Красноказарменная ул., 15к1"
-        }
-      ],
-      "items": [
-        {
-          "title": "Зоогурман Big Dog, консервы 850 г × 6",
-          "note": "собакам средних и крупных пород",
-          "category": "food",
-          "price": 1191,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
-          "type": "constant"
-        },
-        {
-          "title": "Вкусмясина с говядиной, консервы 850 г × 6",
-          "note": "влажный корм собакам",
-          "category": "food",
-          "price": 1290,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
-          "type": "constant"
-        },
-        {
-          "title": "Felix Аппетитные кусочки, курица в желе, 75 г × 26",
-          "note": "влажный корм кошкам",
-          "category": "food",
-          "price": 734,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/714958579/",
-          "type": "constant"
-        },
-        {
-          "title": "Best Dinner Vet Profi Gastro Intestinal, 340 г × 6",
-          "note": "собакам с чувствительным пищеварением",
-          "category": "food",
-          "price": 2724,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/213074157/detail.aspx",
-          "type": "constant"
-        }
-      ],
-      "type": "муниципальный приют ЮВАО"
-    },
-    {
       "slug": "biryulevo",
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-09-29",
+      "updated": "2026-10-01",
       "links": [
         {
           "label": "Сайт приюта",
@@ -263,19 +219,19 @@
           "type": "constant"
         },
         {
-          "title": "Felix Аппетитные кусочки, курица в желе, 75 г × 26",
+          "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 734,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/714958579/",
+          "price": 851,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
         },
         {
           "title": "Фениквантел 100 мг для собак, 5 таблеток",
           "note": "от глистов, собакам от 8 кг",
           "category": "meds",
-          "price": 199,
+          "price": 200,
           "platform": "ozon",
           "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
@@ -284,7 +240,7 @@
           "title": "Пелёнки Skippy 60×90, 30 шт",
           "note": "в хоспис и стационар",
           "category": "hygiene",
-          "price": 449,
+          "price": 403,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
@@ -300,6 +256,50 @@
         }
       ],
       "type": "муниципальный приют ЮАО"
+    },
+    {
+      "slug": "lefedun",
+      "name": "АНО «Лефедун»",
+      "tab": "АНО «Лефедун»",
+      "who": "волонтёры Орехово · 6 тонн корма за август",
+      "updated": "2026-10-01",
+      "links": [
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.com/lefedun"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/lefedun"
+        },
+        {
+          "label": "Реквизиты и отчёты",
+          "url": "https://lefedun.ru"
+        }
+      ],
+      "money_url": "https://lefedun.ru",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Большая Филёвская ул., 45к2"
+        },
+        {
+          "platform": "wb",
+          "address": "Большая Филёвская ул., 43"
+        }
+      ],
+      "items": [
+        {
+          "title": "Award Urinary для кошек, курица и клюква, 10 кг",
+          "note": "стерилизованным кошкам, профилактика МКБ",
+          "category": "food",
+          "price": 6162,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/1238453579/detail.aspx",
+          "type": "constant"
+        }
+      ],
+      "type": "волонтёрская команда"
     }
   ]
 }
