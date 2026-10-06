@@ -435,8 +435,15 @@ function load() {
 }
 // показываем первый экран, когда догрузились шрифты: иначе текст над иллюстрацией
 // перестраивается под новый шрифт и сдвигает её вниз
-Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 1000))])
-  .then(() => revealHero());
+// ...и когда иллюстрации полностью скачаны и раскодированы: иначе они проявляются кусками.
+// Ждём не дольше 1,5 с, чтобы медленная сеть не держала пустой экран
+const heroImgs = [...document.querySelectorAll('.duo img')].map(img =>
+  (img.complete && img.naturalWidth ? Promise.resolve() : new Promise(r => { img.onload = img.onerror = r; }))
+    .then(() => img.decode ? img.decode().catch(() => {}) : null));
+Promise.race([
+  Promise.all([document.fonts ? document.fonts.ready : Promise.resolve(), ...heroImgs]),
+  new Promise(r => setTimeout(r, 1500)),
+]).then(() => revealHero());
 watchReveal();
 setupAccordion();
 window.__lapkiReady = true;

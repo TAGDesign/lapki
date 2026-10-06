@@ -18,6 +18,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preload" href="assets/ill-person.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/ill-animals.webp" as="image" type="image/webp">
   <link rel="preload" href="assets/fonts/inter-tight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
@@ -40,8 +42,8 @@
 
       <div class="scene">
         <div class="duo rv rv-photo" data-rv="hero" data-d="0" aria-hidden="true">
-          <div class="ill ill-l"><img src="assets/ill-person.webp" alt="" onerror="this.remove()"></div>
-          <div class="ill ill-r"><img src="assets/ill-animals.webp" alt="" onerror="this.remove()"></div>
+          <div class="ill ill-l"><img src="assets/ill-person.webp" alt="" fetchpriority="high" decoding="async" onerror="this.remove()"></div>
+          <div class="ill ill-r"><img src="assets/ill-animals.webp" alt="" fetchpriority="high" decoding="async" onerror="this.remove()"></div>
         </div>
         <a class="need need-wait" id="hero-need" href="#" aria-hidden="true" tabindex="-1"></a>
       </div>
