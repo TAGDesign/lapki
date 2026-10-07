@@ -15,7 +15,8 @@
         },
         {
           "label": "Telegram",
-          "url": "https://t.me/nekrasovka_priut"
+          "url": "https://t.me/nekrasovka_priut",
+          "person": true
         }
       ],
       "money_url": "https://nekrasovka-priut.ru/",

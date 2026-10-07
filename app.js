@@ -171,9 +171,9 @@ function folder(s, i, deliveredCount) {
       ? `<li><span>${name} · ${esc(p.address)}</span><button type="button" class="copy" data-copy="${esc(p.address)}" aria-label="Скопировать адрес ${esc(p.address)}"><span class="ic ic-copy" aria-hidden="true"></span><i>Скопировать</i></button></li>`
       : `<li><span>${name} · <span class="tbd">адрес уточняем с волонтёрами</span></span></li>`;
   }).join('');
-  // ссылка для проверки в шапке карточки — одна: Telegram, иначе ВКонтакте, иначе сайт
+  // ссылка для проверки в шапке карточки — одна: Telegram, иначе ВКонтакте, иначе сайт; личные аккаунты (person) не берём
   const kinds = { 't.me': 'Telegram', 'vk.com': 'ВКонтакте' };
-  const typed = s.links.map(l => ({ ...l, kind: kinds[new URL(l.url).hostname.replace(/^www\./, '')] || 'Сайт' }));
+  const typed = s.links.filter(l => !l.person).map(l => ({ ...l, kind: kinds[new URL(l.url).hostname.replace(/^www\./, '')] || 'Сайт' }));
   const main = ['Telegram', 'ВКонтакте', 'Сайт'].map(k => typed.find(l => l.kind === k)).find(Boolean);
   const links = main ? `<a href="${esc(outLink(main.url, s.slug, 'groups'))}" target="_blank" rel="noopener" data-track="verify" data-slug="${s.slug}">${main.kind}<span class="ic ic-arrow-right" aria-hidden="true"></span></a>` : '';
   const delivered = deliveredCount
