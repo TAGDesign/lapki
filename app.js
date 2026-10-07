@@ -363,7 +363,7 @@ const scrollIO = 'IntersectionObserver' in window && !CALM
   ? new IntersectionObserver(entries => entries.forEach(en => {
       if (!en.isIntersecting) return;
       // видно сразу при загрузке (на широком экране — карточки приютов) — показываем следом за кнопкой первого экрана
-      const afterHero = heroT0 === null ? 1500 : heroT0 + 1500 - performance.now();
+      const afterHero = heroT0 === null ? 1700 : heroT0 + 1700 - performance.now();
       revealIn(en.target, Math.max(+en.target.dataset.d || 0, afterHero));
       scrollIO.unobserve(en.target);
     }), { threshold: 0, rootMargin: '0px 0px -40px 0px' })
