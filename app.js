@@ -42,6 +42,8 @@ const YM_ID = 113157493;
 function trackClick(kind, slug) {
   if (typeof ym !== 'function') return;
   ym(YM_ID, 'reachGoal', kind, slug ? { shelter: slug } : undefined);
+  // то же — параметром визита: по нему Метрика умеет группировать в отчётах и дашбордах
+  if (slug) ym(YM_ID, 'params', { [kind]: slug });
 }
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
