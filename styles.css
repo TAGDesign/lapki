@@ -56,8 +56,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .cta:active{transform:scale(.985)}
 .under{text-align:center;margin-top:10px}
 
-.intro{padding:24px 2px 4px;color:var(--ink-2);text-wrap:pretty}
-.intro p{max-width:34em}
+.intro{padding:24px 2px 0;margin-bottom:-18px;color:var(--ink-2);text-wrap:pretty;max-width:34em}
 
 /* позиция */
 .pos{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:start}
@@ -78,6 +77,8 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .buy{background:var(--action);color:#fff;border-radius:16px;padding:0 18px;font-weight:800;font-size:15px;line-height:1.15;min-height:48px;display:flex;flex-wrap:wrap;align-items:baseline;align-content:center;justify-content:center;column-gap:8px;transition:transform .12s ease-out,filter .12s ease-out}
 .buy:active{transform:scale(.96);filter:brightness(.96)}
 .buy small{font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
+
+.howstrip{display:none}
 
 /* папки */
 .folders{padding-top:8px;scroll-margin-top:12px}
@@ -111,9 +112,6 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .copy.ok{background:var(--done)}
 .rowlink{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:16px 0 4px;margin-top:12px;min-height:44px;font-weight:700;width:100%}
 .rowlink .ic{width:20px;height:20px;transition:transform .2s ease}
-.rowlink[aria-expanded="true"] .ic{transform:rotate(180deg)}
-.links{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px}
-.links a{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
 
 .load-error{padding:24px 2px}
 .load-error p{margin-bottom:12px;color:var(--ink-2)}

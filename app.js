@@ -89,9 +89,11 @@ function toast(text) {
 // разрешает открыть вкладку только в момент нажатия и блокирует любое отложенное открытие.
 // Поэтому адрес кладём в буфер синхронно, а тост остаётся на странице — его видно,
 // когда человек возвращается с маркетплейса.
-function handoff(addr, platform) {
+let handoffFrom = null;
+function handoff(addr, platform, from) {
   const el = document.getElementById('handoff');
   if (!el) return;
+  handoffFrom = from || null;
   document.getElementById('handoff-addr').textContent = addr;
   const copy = document.getElementById('handoff-copy');
   copy.textContent = 'Скопировать адрес';
@@ -99,8 +101,17 @@ function handoff(addr, platform) {
   copy.dataset.copy = addr;
   el.hidden = false;
   nbsp(el);
+  // фокус на «Скопировать адрес»: вернувшись с маркетплейса, человек с клавиатуры сразу на кнопке
+  copy.focus({ preventScroll: true });
 }
-document.getElementById('handoff-close').addEventListener('click', () => { document.getElementById('handoff').hidden = true; });
+function closeHandoff() {
+  const el = document.getElementById('handoff');
+  if (el.hidden) return;
+  el.hidden = true;
+  if (handoffFrom && document.contains(handoffFrom)) handoffFrom.focus({ preventScroll: true });
+  handoffFrom = null;
+}
+document.getElementById('handoff-close').addEventListener('click', closeHandoff);
 document.getElementById('handoff-copy').addEventListener('click', e => {
   copyText(e.currentTarget.dataset.copy);
   e.currentTarget.textContent = 'Скопировано';
@@ -110,16 +121,28 @@ document.getElementById('handoff-copy').addEventListener('click', e => {
 
 // фото «Что уже доехало» на весь экран
 const lightbox = document.getElementById('lightbox');
-function closeLightbox() { lightbox.hidden = true; }
+let lightboxFrom = null;
+function closeLightbox() {
+  if (lightbox.hidden) return;
+  lightbox.hidden = true;
+  if (lightboxFrom) lightboxFrom.focus({ preventScroll: true });
+  lightboxFrom = null;
+}
 document.getElementById('delivered-grid').addEventListener('click', e => {
   const img = e.target.closest('img');
   if (!img) return;
   const big = document.getElementById('lightbox-img');
   big.src = img.src; big.alt = img.alt;
+  lightboxFrom = img.closest('a, button') || img;
   lightbox.hidden = false;
+  document.getElementById('lightbox-close').focus();
 });
 lightbox.addEventListener('click', e => { if (e.target !== document.getElementById('lightbox-img')) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); document.getElementById('handoff').hidden = true; } });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLightbox(); closeHandoff(); }
+  // фото на весь экран — модальное окно: Tab не уходит на страницу под ним
+  if (e.key === 'Tab' && !lightbox.hidden) { e.preventDefault(); document.getElementById('lightbox-close').focus(); }
+});
 
 // Липкий заголовок карточки: убираем скругление, когда он прилип посреди карточки
 function markStuck() {
@@ -277,7 +300,7 @@ function render(data, delivered) {
 }
 
 document.addEventListener('click', e => {
-  const t = e.target.closest('.more, .copy, [data-toggle], [data-track], .buy');
+  const t = e.target.closest('.more, .copy, [data-track], .buy');
   if (!t) return;
 
   if (t.matches('.more')) {
@@ -300,21 +323,13 @@ document.addEventListener('click', e => {
     return;
   }
 
-  if (t.dataset.toggle === 'links') {
-    if (t.getAttribute('aria-expanded') !== 'true') trackClick('verify', t.getAttribute('aria-controls').replace('links-', ''));
-    const on = t.getAttribute('aria-expanded') !== 'true';
-    t.setAttribute('aria-expanded', on);
-    slide(document.getElementById(t.getAttribute('aria-controls')), on);
-    return;
-  }
-
   if (t.matches('.buy')) {
     window.__boughtAt = Date.now();
     const addr = t.dataset.addr;
     if (addr) {
       // не отменяем переход: вкладка должна открыться тем же нажатием
       copyText(addr);
-      handoff(addr, t.dataset.platform);
+      handoff(addr, t.dataset.platform, t);
     }
   }
 
@@ -347,9 +362,11 @@ function revealNeed() {
 const scrollIO = 'IntersectionObserver' in window && !CALM
   ? new IntersectionObserver(entries => entries.forEach(en => {
       if (!en.isIntersecting) return;
-      revealIn(en.target, +en.target.dataset.d || 0);
+      // видно сразу при загрузке (на широком экране — карточки приютов) — показываем следом за кнопкой первого экрана
+      const afterHero = heroT0 === null ? 1500 : heroT0 + 1500 - performance.now();
+      revealIn(en.target, Math.max(+en.target.dataset.d || 0, afterHero));
       scrollIO.unobserve(en.target);
-    }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' })
+    }), { threshold: 0, rootMargin: '0px 0px -40px 0px' })
   : null;
 function watchReveal(root) {
   (root || document).querySelectorAll('[data-rv="scroll"]:not(.in)').forEach(el =>

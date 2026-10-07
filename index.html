@@ -23,6 +23,7 @@
   <link rel="preload" href="assets/fonts/inter-tight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="desktop.css" media="(min-width:900px)">
   <script>if('scrollRestoration' in history)history.scrollRestoration='manual';document.documentElement.classList.add('js');setTimeout(function(){if(!window.__lapkiReady)document.documentElement.classList.remove('js')},4000)</script>
 </head>
 <body>
@@ -51,12 +52,15 @@
       <div class="rv" data-rv="hero" data-d="1300">
         <a class="cta" href="#lists" data-track="cta">Смотреть списки</a>
         <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
+        <p class="intro">Списки нам присылают волонтёры приютов, обновляем раз в день. Рядом с кнопкой «Купить» — самая низкая цена из трёх площадок: Ozon, Маркета и Wildberries. Считаем без персональных скидок, кошельков и банковских карт.</p>
       </div>
     </section>
 
-    <section class="intro rv" data-rv="scroll">
-      <p>Списки нам присылают волонтёры приютов, обновляем раз в день. Рядом с кнопкой «Купить» — самая низкая цена из трёх площадок: Ozon, Маркета и Wildberries. Считаем без персональных скидок, кошельков и банковских карт.</p>
-    </section>
+    <ol class="howstrip" aria-label="Коротко, как заказать">
+      <li><b>Нажмите «Купить»</b><span>откроется карточка на маркетплейсе</span></li>
+      <li><b>Доставка — в пункт выдачи приюта</b><span>адрес в карточке приюта, получатель — вы</span></li>
+      <li><b>Код получения — в наш чат</b><span>передадим волонтёрам, они заберут</span></li>
+    </ol>
 
     <h2 class="sr-only">Кому нужна помощь</h2>
     <section class="folders" id="lists" aria-label="Получатели"></section>
@@ -117,7 +121,7 @@
   <b id="handoff-addr"></b>
   <button type="button" class="h-copy" id="handoff-copy">Скопировать адрес</button>
 </div>
-<div class="lightbox" id="lightbox" hidden>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Фото посылки" hidden>
   <button type="button" class="lb-close" id="lightbox-close" aria-label="Закрыть"></button>
   <img id="lightbox-img" alt="">
 </div>
