@@ -200,7 +200,8 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 .handoff .cap{color:#a9b6bb}
 .handoff b{font-size:18px;line-height:1.2}
 .handoff .h-copy{min-height:44px;border-radius:12px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;padding:0 16px}
-.handoff .h-copy.ok{background:var(--done);color:var(--ink)}
+.handoff .h-copy.ok{background:transparent;color:#fff;border:1px solid #fff;display:flex;align-items:center;justify-content:center;gap:8px}
+.handoff .h-copy.ok::before{content:"";width:7px;height:12px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
 .h-close,.lb-close{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12)}
 .h-close::before,.h-close::after,.lb-close::before,.lb-close::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:#fff;transform:translate(-50%,-50%) rotate(45deg)}
 .h-close::after,.lb-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
