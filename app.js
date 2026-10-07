@@ -171,12 +171,11 @@ function folder(s, i, deliveredCount) {
       ? `<li><span>${name} · ${esc(p.address)}</span><button type="button" class="copy" data-copy="${esc(p.address)}" aria-label="Скопировать адрес ${esc(p.address)}"><span class="ic ic-copy" aria-hidden="true"></span><i>Скопировать</i></button></li>`
       : `<li><span>${name} · <span class="tbd">адрес уточняем с волонтёрами</span></span></li>`;
   }).join('');
-  // ссылки для проверки — в шапке карточки: по одной на площадку (сайт, Telegram, ВК)
+  // ссылка для проверки в шапке карточки — одна: Telegram, иначе ВКонтакте, иначе сайт
   const kinds = { 't.me': 'Telegram', 'vk.com': 'ВКонтакте' };
-  const seen = new Set();
-  const links = s.links.map(l => ({ ...l, kind: kinds[new URL(l.url).hostname.replace(/^www\./, '')] || 'Сайт' }))
-    .filter(l => !seen.has(l.kind) && seen.add(l.kind))
-    .map(l => `<a href="${esc(outLink(l.url, s.slug, 'groups'))}" target="_blank" rel="noopener" data-track="verify" data-slug="${s.slug}">${l.kind}</a>`).join('<span aria-hidden="true">·</span>');
+  const typed = s.links.map(l => ({ ...l, kind: kinds[new URL(l.url).hostname.replace(/^www\./, '')] || 'Сайт' }));
+  const main = ['Telegram', 'ВКонтакте', 'Сайт'].map(k => typed.find(l => l.kind === k)).find(Boolean);
+  const links = main ? `<a href="${esc(outLink(main.url, s.slug, 'groups'))}" target="_blank" rel="noopener" data-track="verify" data-slug="${s.slug}">${main.kind}<span class="ic ic-arrow-right" aria-hidden="true"></span></a>` : '';
   const delivered = deliveredCount
     ? `<a class="rowlink" href="#delivered"><span>Доехало ${deliveredCount} ${plural(deliveredCount, 'посылка', 'посылки', 'посылок')}</span><span class="ic ic-arrow-right" aria-hidden="true"></span></a>` : '';
 
