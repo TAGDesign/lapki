@@ -93,9 +93,9 @@ function handoff(addr, platform) {
   const el = document.getElementById('toast');
   if (!el) return;
   clearTimeout(toastTimer);
-  const html = `<span class="t-head">Адрес пункта выдачи скопирован</span>`
+  const html = `<span class="t-head">Пункт выдачи приюта</span>`
     + `<b>${esc(addr)}</b>`
-    + `<span class="t-load">Вставьте его в поле доставки на ${esc(platform)}</span>`;
+    + `<span class="t-load">На ${esc(platform)} найдите его на карте пунктов выдачи. Адрес уже в буфере</span>`;
   el.classList.add('wide', 'on');
   el.innerHTML = html;
   nbsp(el);
