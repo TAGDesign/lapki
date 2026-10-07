@@ -100,6 +100,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin-top:20px}
 .pvz ul{margin-top:8px}
 .pvz li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px;min-height:51px}
+.pvz li > span{flex:1;min-width:0;overflow-wrap:anywhere;hyphens:auto}
 .pvz .tbd{color:#5a625f}
 .copy{flex:none;min-width:44px;height:38px;padding:0 12px;border:1px solid var(--ink);border-radius:999px;background:var(--sheet);display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700}
 .copy i{font-style:normal}
