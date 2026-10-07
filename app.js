@@ -271,6 +271,8 @@ document.addEventListener('click', e => {
 
   if (t.matches('.copy')) {
     trackClick('copy', t.closest('.folder')?.id || '');
+    // человек уже нажимал «Купить» и вернулся за адресом вручную — автокопирование для него не сработало
+    if (window.__boughtAt && Date.now() - window.__boughtAt < 10 * 60 * 1000) trackClick('copy_after_buy', t.closest('.folder')?.id || '');
     copyText(t.dataset.copy);
     t.classList.add('ok');
     toast('Адрес скопирован<b>' + esc(t.dataset.copy) + '</b>');
@@ -287,6 +289,7 @@ document.addEventListener('click', e => {
   }
 
   if (t.matches('.buy')) {
+    window.__boughtAt = Date.now();
     const addr = t.dataset.addr;
     if (addr) {
       // не отменяем переход: вкладка должна открыться тем же нажатием
