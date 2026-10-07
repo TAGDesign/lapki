@@ -90,6 +90,8 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline;width:100%}
 .meta .cap{white-space:nowrap}
 .meta .shut{display:none}
+.list-cap{display:flex;justify-content:space-between;gap:10px}
+.list-cap span:last-child{white-space:nowrap}
 
 .body{padding-top:4px}
 .list .pos{padding:14px 0;border-top:1px solid var(--line)}

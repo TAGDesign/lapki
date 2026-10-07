@@ -181,13 +181,12 @@ function folder(s, i, deliveredCount) {
       <h3 class="head-name">${esc(s.tab || s.name)}</h3>
       <div class="meta">
         <span class="muted">${esc(s.who)}</span>
-        <span class="cap">обновлён ${formatDate(s.updated)}</span>
       </div>
     </header>
     <div class="sheet">
       <div class="body" id="body-${s.slug}">
         <div class="list" id="list-${s.slug}">
-          <p class="cap">Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</p>
+          <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
           ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
