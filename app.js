@@ -90,17 +90,36 @@ function toast(text) {
 // Поэтому адрес кладём в буфер синхронно, а тост остаётся на странице — его видно,
 // когда человек возвращается с маркетплейса.
 function handoff(addr, platform) {
-  const el = document.getElementById('toast');
+  const el = document.getElementById('handoff');
   if (!el) return;
-  clearTimeout(toastTimer);
-  const html = `<span class="t-head">Пункт выдачи приюта</span>`
-    + `<b>${esc(addr)}</b>`
-    + `<span class="t-load">На ${esc(platform)} найдите его на карте пунктов выдачи. Адрес уже в буфере</span>`;
-  el.classList.add('wide', 'on');
-  el.innerHTML = html;
+  document.getElementById('handoff-addr').textContent = addr;
+  const copy = document.getElementById('handoff-copy');
+  copy.textContent = 'Скопировать адрес';
+  copy.classList.remove('ok');
+  copy.dataset.copy = addr;
+  el.hidden = false;
   nbsp(el);
-  toastTimer = setTimeout(() => el.classList.remove('on'), 12000);
 }
+document.getElementById('handoff-close').addEventListener('click', () => { document.getElementById('handoff').hidden = true; });
+document.getElementById('handoff-copy').addEventListener('click', e => {
+  copyText(e.currentTarget.dataset.copy);
+  e.currentTarget.textContent = 'Скопировано';
+  e.currentTarget.classList.add('ok');
+  trackClick('copy_handoff', '');
+});
+
+// фото «Что уже доехало» на весь экран
+const lightbox = document.getElementById('lightbox');
+function closeLightbox() { lightbox.hidden = true; }
+document.getElementById('delivered-grid').addEventListener('click', e => {
+  const img = e.target.closest('img');
+  if (!img) return;
+  const big = document.getElementById('lightbox-img');
+  big.src = img.src; big.alt = img.alt;
+  lightbox.hidden = false;
+});
+lightbox.addEventListener('click', e => { if (e.target !== document.getElementById('lightbox-img')) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); document.getElementById('handoff').hidden = true; } });
 
 // Липкий заголовок карточки: убираем скругление, когда он прилип посреди карточки
 function markStuck() {

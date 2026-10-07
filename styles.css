@@ -193,3 +193,20 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 }
 /* место под карточку держим сразу, чтобы экран не прыгал, когда подгрузятся данные */
 .need-wait{visibility:hidden;min-height:98px}
+
+/* плашка после «Купить»: висит, пока не закроют; при новом «Купить» заменяется */
+.handoff{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:21;width:min(94vw,400px);background:var(--ink);color:#fff;border-radius:18px;padding:16px 18px 16px;display:grid;gap:8px;text-align:center;box-shadow:0 12px 32px rgba(4,32,43,.3)}
+.handoff[hidden]{display:none}
+.handoff .cap{color:#a9b6bb}
+.handoff b{font-size:18px;line-height:1.2}
+.handoff .h-copy{min-height:44px;border-radius:12px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;padding:0 16px}
+.handoff .h-copy.ok{background:var(--done);color:var(--ink)}
+.h-close,.lb-close{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12)}
+.h-close::before,.h-close::after,.lb-close::before,.lb-close::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:#fff;transform:translate(-50%,-50%) rotate(45deg)}
+.h-close::after,.lb-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
+/* фото на весь экран */
+.grid img{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:30;background:rgba(4,32,43,.92);display:flex;align-items:center;justify-content:center;padding:16px}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:100%;max-height:100%;border-radius:16px;cursor:default}
+.lb-close{top:16px;right:16px;width:44px;height:44px;background:rgba(255,255,255,.18)}

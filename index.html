@@ -111,6 +111,16 @@
   <p>Мы используем cookie для статистики посещений. Оставаясь на сайте, вы с этим соглашаетесь. <a href="terms.html">Подробнее</a></p>
   <button type="button" id="cookie-ok">Хорошо</button>
 </div>
+<div class="handoff" id="handoff" role="dialog" aria-label="Пункт выдачи приюта" hidden>
+  <button type="button" class="h-close" id="handoff-close" aria-label="Закрыть"></button>
+  <span class="cap">Пункт выдачи приюта</span>
+  <b id="handoff-addr"></b>
+  <button type="button" class="h-copy" id="handoff-copy">Скопировать адрес</button>
+</div>
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lb-close" id="lightbox-close" aria-label="Закрыть"></button>
+  <img id="lightbox-img" alt="">
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
