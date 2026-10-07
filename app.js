@@ -171,7 +171,12 @@ function folder(s, i, deliveredCount) {
       ? `<li><span>${name} · ${esc(p.address)}</span><button type="button" class="copy" data-copy="${esc(p.address)}" aria-label="Скопировать адрес ${esc(p.address)}"><span class="ic ic-copy" aria-hidden="true"></span><i>Скопировать</i></button></li>`
       : `<li><span>${name} · <span class="tbd">адрес уточняем с волонтёрами</span></span></li>`;
   }).join('');
-  const links = s.links.map(l => `<a href="${esc(outLink(l.url, s.slug, 'groups'))}" target="_blank" rel="noopener" data-track="groups" data-slug="${s.slug}">${esc(l.label)}</a>`).join('');
+  // ссылки для проверки — в шапке карточки: по одной на площадку (сайт, Telegram, ВК)
+  const kinds = { 't.me': 'Telegram', 'vk.com': 'ВКонтакте' };
+  const seen = new Set();
+  const links = s.links.map(l => ({ ...l, kind: kinds[new URL(l.url).hostname.replace(/^www\./, '')] || 'Сайт' }))
+    .filter(l => !seen.has(l.kind) && seen.add(l.kind))
+    .map(l => `<a href="${esc(outLink(l.url, s.slug, 'groups'))}" target="_blank" rel="noopener" data-track="verify" data-slug="${s.slug}">${l.kind}</a>`).join('<span aria-hidden="true">·</span>');
   const delivered = deliveredCount
     ? `<a class="rowlink" href="#delivered"><span>Доехало ${deliveredCount} ${plural(deliveredCount, 'посылка', 'посылки', 'посылок')}</span><span class="ic ic-arrow-right" aria-hidden="true"></span></a>` : '';
 
@@ -180,7 +185,7 @@ function folder(s, i, deliveredCount) {
       ${s.type ? `<p class="cap kind">${esc(s.type)}</p>` : ''}
       <h3 class="head-name">${esc(s.tab || s.name)}</h3>
       <div class="meta">
-        <span class="muted">${esc(s.who)}</span>
+        <span class="muted links-inline">${links}</span>
       </div>
     </header>
     <div class="sheet">
@@ -192,8 +197,6 @@ function folder(s, i, deliveredCount) {
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
         <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul></div>
-        ${links ? `<button type="button" class="rowlink" data-toggle="links" aria-expanded="false" aria-controls="links-${s.slug}"><span>${/волонт/i.test(s.type || '') ? 'Где проверить команду' : 'Где проверить приют'}</span><span class="ic ic-chevron-down" aria-hidden="true"></span></button>
-        <div class="acc" id="links-${s.slug}" style="height:0px"><div class="acc-in"><div class="links">${links}</div></div></div>` : ''}
         ${delivered}
       </div>
     </div>

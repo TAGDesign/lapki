@@ -88,6 +88,8 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .head h3{font:700 22px/1.1 var(--display);letter-spacing:-.015em;margin-bottom:6px}
 .sheet{padding:0 16px 20px}
 .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline;width:100%}
+.links-inline{display:flex;flex-wrap:wrap;gap:6px}
+.links-inline a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .meta .cap{white-space:nowrap}
 .meta .shut{display:none}
 .list-cap{display:flex;justify-content:space-between;gap:10px}
