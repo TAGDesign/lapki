@@ -491,14 +491,16 @@ setupAccordion();
 window.__lapkiReady = true;
 load();
 
-// плашка cookie: показываем один раз, согласие храним в localStorage
+// плашка cookie: показываем один раз, после первого скролла; согласие храним в localStorage
 (() => {
   const el = document.getElementById('cookie');
   if (!el) return;
   let seen = false;
   try { seen = localStorage.getItem('lapki-cookie') === '1'; } catch (e) {}
   if (seen) return;
-  el.hidden = false;
+  // не на первом экране: показываем, когда человек начал листать
+  const show = () => { if (scrollY < 40) return; removeEventListener('scroll', show); el.hidden = false; };
+  addEventListener('scroll', show, { passive: true });
   document.getElementById('cookie-ok').addEventListener('click', () => {
     el.hidden = true;
     try { localStorage.setItem('lapki-cookie', '1'); } catch (e) {}
