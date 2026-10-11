@@ -242,6 +242,12 @@ function render(data, delivered) {
   // папки
   const counts = {};
   delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + (d.parcels || 1); }); // на одном фото может быть несколько посылок
+  // счётчик на первом экране: сколько посылок доехало и в сколько приютов
+  const total = Object.values(counts).reduce((x, y) => x + y, 0);
+  if (total) {
+    const n = Object.keys(counts).length;
+    document.getElementById('hero-done').innerHTML = `<span class="dot" aria-hidden="true"></span>Доехало ${total} ${plural(total, 'посылка', 'посылки', 'посылок')} в ${n} ${plural(n, 'приют', 'приюта', 'приютов')}<span class="ic ic-arrow-right" aria-hidden="true"></span>`;
+  }
   const lists = document.getElementById('lists');
   lists.innerHTML = shelters.map((s, i) => folder(s, i, counts[s.slug] || 0)).join('');
   lists.querySelectorAll('.folder').forEach(f => { f.classList.add('rv'); f.dataset.rv = 'scroll'; });
