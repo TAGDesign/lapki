@@ -56,10 +56,12 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .cta:active{transform:scale(.985)}
 .under{text-align:center;margin-top:10px}
 /* место занято заранее, чтобы первый экран не прыгал, когда придут данные */
-.hero-done{display:flex;justify-content:center;align-items:center;gap:8px;min-height:24px;margin-top:6px;font-size:13px;font-weight:700;color:var(--ink)}
+.hero-done{display:flex;justify-content:center;align-items:center;gap:10px;min-height:32px;margin-top:8px;font-size:13px;font-weight:700;color:var(--ink)}
 .hero-done:empty{visibility:hidden}
-.hero-done .dot{width:8px;height:8px;border-radius:50%;background:var(--done);box-shadow:0 0 0 1px var(--ink)}
-.hero-done .ic{width:16px;height:16px}
+/* фото посылок внахлёст — видно, что доехало по-настоящему */
+.hero-done .faces{display:flex}
+.hero-done .faces img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid var(--canvas);margin-left:-8px}
+.hero-done .faces img:first-child{margin-left:0}
 
 .intro{padding:24px 2px 0;margin-bottom:-18px;color:var(--ink-2);text-wrap:pretty;max-width:34em}
 

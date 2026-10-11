@@ -246,7 +246,8 @@ function render(data, delivered) {
   const total = Object.values(counts).reduce((x, y) => x + y, 0);
   if (total) {
     const n = Object.keys(counts).length;
-    document.getElementById('hero-done').innerHTML = `<span class="dot" aria-hidden="true"></span>Доехало ${total} ${plural(total, 'посылка', 'посылки', 'посылок')} в ${n} ${plural(n, 'приют', 'приюта', 'приютов')}<span class="ic ic-arrow-right" aria-hidden="true"></span>`;
+    const faces = delivered.slice(0, 3).map(d => `<img src="${esc(d.photo)}" alt="" width="28" height="28">`).join('');
+    document.getElementById('hero-done').innerHTML = `<span class="faces" aria-hidden="true">${faces}</span>Доехало ${total} ${plural(total, 'посылка', 'посылки', 'посылок')} в ${n} ${plural(n, 'приют', 'приюта', 'приютов')}`;
   }
   const lists = document.getElementById('lists');
   lists.innerHTML = shelters.map((s, i) => folder(s, i, counts[s.slug] || 0)).join('');
