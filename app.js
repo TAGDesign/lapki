@@ -241,7 +241,7 @@ function render(data, delivered) {
 
   // папки
   const counts = {};
-  delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + 1; });
+  delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + (d.parcels || 1); }); // на одном фото может быть несколько посылок
   const lists = document.getElementById('lists');
   lists.innerHTML = shelters.map((s, i) => folder(s, i, counts[s.slug] || 0)).join('');
   lists.querySelectorAll('.folder').forEach(f => { f.classList.add('rv'); f.dataset.rv = 'scroll'; });
