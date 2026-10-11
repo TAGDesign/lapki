@@ -19,11 +19,7 @@
 
   /* приюты в две колонки */
   /* коротко «как заказать» — прямо над кнопками «Купить», полный блок ниже */
-  .howstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s;margin-bottom:32px;padding:20px 24px;border-radius:var(--r-sheet);background:var(--surface)}
-  .howstrip li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;column-gap:12px;align-content:start;font-size:14px}
-  .howstrip li::before{content:counter(s);grid-row:span 2;width:28px;height:28px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px}
-  .howstrip b{font-weight:700;line-height:1.3}
-  .howstrip span{color:var(--grey);font-size:13px}
+  .howstrip{grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 32px;padding:20px 24px}
 
   /* приюты в две колонки «кирпичами»: карточки разной высоты встают без дыр */
   .folders{columns:2;column-gap:24px;padding-top:0;margin-bottom:-24px}
