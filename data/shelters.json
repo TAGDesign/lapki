@@ -7,7 +7,7 @@
       "name": "Приют Некрасовка",
       "tab": "Приют Некрасовка",
       "who": "2700 собак · 350 кошек",
-      "updated": "2026-10-08",
+      "updated": "2026-10-11",
       "links": [
         {
           "label": "Сайт приюта",
@@ -53,7 +53,7 @@
           "title": "Зоогурман Big Dog, консервы 850 г × 6",
           "note": "собакам средних и крупных пород",
           "category": "food",
-          "price": 1293,
+          "price": 1557,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
           "type": "constant"
@@ -84,7 +84,7 @@
       "name": "Приют Печатники",
       "tab": "Приют Печатники",
       "who": "2000 собак · 90 кошек",
-      "updated": "2026-10-08",
+      "updated": "2026-10-11",
       "links": [
         {
           "label": "Сайт волонтёров приюта",
@@ -108,19 +108,19 @@
       ],
       "items": [
         {
-          "title": "Brit, консервы для собак, 850 г",
+          "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "одна банка — влажный корм собакам",
           "category": "food",
-          "price": 291,
+          "price": 358,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/314986774/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
           "type": "constant"
         },
         {
           "title": "Ем без проблем, консервы для собак с индейкой, 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1892,
+          "price": 2332,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/910250375/detail.aspx",
           "type": "count",
@@ -129,12 +129,12 @@
           "closed_at": null
         },
         {
-          "title": "Brit Premium для котят с курицей, паучи 85 г × 14",
+          "title": "Brit Premium для котят с кроликом, паучи 85 г × 14",
           "note": "влажный корм котятам",
           "category": "food",
-          "price": 913,
+          "price": 1008,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/228903580/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/101708572/detail.aspx",
           "type": "count",
           "need": 50,
           "bought": 0,
@@ -148,7 +148,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-10-08",
+      "updated": "2026-10-11",
       "links": [
         {
           "label": "Сайт приюта",
@@ -238,12 +238,12 @@
           "type": "constant"
         },
         {
-          "title": "Brit, консервы для собак, 850 г",
+          "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "влажный корм собакам, одна банка",
           "category": "food",
-          "price": 291,
+          "price": 358,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/314986774/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
           "type": "constant"
         },
         {
@@ -259,7 +259,7 @@
           "title": "Пелёнки Skippy 60×90, 30 шт",
           "note": "в хоспис и стационар",
           "category": "hygiene",
-          "price": 562,
+          "price": 548,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
@@ -281,7 +281,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-10-08",
+      "updated": "2026-10-11",
       "links": [
         {
           "label": "ВКонтакте",
