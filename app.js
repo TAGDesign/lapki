@@ -218,7 +218,7 @@ function folder(s, i, deliveredCount) {
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
-        <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul></div>
+        <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}</div>
         ${delivered}
       </div>
     </div>
