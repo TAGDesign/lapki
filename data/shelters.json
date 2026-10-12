@@ -150,7 +150,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-10-11",
+      "updated": "2026-10-12",
       "links": [
         {
           "label": "Сайт приюта",
@@ -192,6 +192,42 @@
           "price": 225,
           "platform": "ozon",
           "url": "https://www.ozon.ru/product/3284254382/",
+          "type": "constant"
+        },
+        {
+          "title": "Зоогурман, консервы для собак, 850 г",
+          "note": "одна банка — влажный корм собакам",
+          "category": "food",
+          "price": 280,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/431170565/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
+          "note": "влажный корм собакам, одна банка",
+          "category": "food",
+          "price": 358,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Лёгкое говяжье сушёное, TastyPaws, 200 г",
+          "note": "лакомство собакам",
+          "category": "food",
+          "price": 491,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/240373076/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Пелёнки Skippy 60×90, 30 шт",
+          "note": "в хоспис и стационар",
+          "category": "hygiene",
+          "price": 548,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
         },
         {
@@ -240,30 +276,12 @@
           "type": "constant"
         },
         {
-          "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
-          "note": "влажный корм собакам, одна банка",
-          "category": "food",
-          "price": 358,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
-          "type": "constant"
-        },
-        {
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
           "price": 917,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
-          "type": "constant"
-        },
-        {
-          "title": "Пелёнки Skippy 60×90, 30 шт",
-          "note": "в хоспис и стационар",
-          "category": "hygiene",
-          "price": 548,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
         },
         {
