@@ -7,7 +7,7 @@
       "name": "Приют Некрасовка",
       "tab": "Приют Некрасовка",
       "who": "2700 собак · 350 кошек",
-      "updated": "2026-10-11",
+      "updated": "2026-10-14",
       "links": [
         {
           "label": "Сайт приюта",
@@ -44,7 +44,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 917,
+          "price": 953,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -53,7 +53,7 @@
           "title": "Зоогурман Big Dog, консервы 850 г × 6",
           "note": "собакам средних и крупных пород",
           "category": "food",
-          "price": 1557,
+          "price": 1293,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
           "type": "constant"
@@ -62,7 +62,7 @@
           "title": "Вкусмясина с говядиной, консервы 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1304,
+          "price": 1320,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
           "type": "constant"
@@ -84,7 +84,7 @@
       "name": "Приют Печатники",
       "tab": "Приют Печатники",
       "who": "2000 собак · 90 кошек",
-      "updated": "2026-10-11",
+      "updated": "2026-10-14",
       "links": [
         {
           "label": "Сайт волонтёров приюта",
@@ -111,7 +111,7 @@
           "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "одна банка — влажный корм собакам",
           "category": "food",
-          "price": 358,
+          "price": 372,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
           "type": "constant"
@@ -120,7 +120,7 @@
           "title": "Ем без проблем, консервы для собак с ягнёнком 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1859,
+          "price": 1798,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/910284193/detail.aspx",
           "type": "count",
@@ -150,7 +150,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "links": [
         {
           "label": "Сайт приюта",
@@ -189,7 +189,7 @@
           "title": "Фениквантел 100 мг для собак, 5 таблеток",
           "note": "от глистов, собакам от 8 кг",
           "category": "meds",
-          "price": 225,
+          "price": 242,
           "platform": "ozon",
           "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
@@ -207,7 +207,7 @@
           "title": "Organic Choice Vet Gastrointestinal, консервы 340 г × 6",
           "note": "собакам с больным ЖКТ",
           "category": "food",
-          "price": 1967,
+          "price": 2031,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/250586634/detail.aspx",
           "type": "constant"
@@ -225,7 +225,7 @@
           "title": "Royal Canin Gastrointestinal для кошек, 2 кг",
           "note": "кошкам с больным ЖКТ",
           "category": "food",
-          "price": 4401,
+          "price": 4573,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/173456849/detail.aspx",
           "type": "constant"
@@ -234,7 +234,7 @@
           "title": "Farmina Vet Life UltraHypo для кошек, 2 кг",
           "note": "кошкам с аллергией",
           "category": "food",
-          "price": 5104,
+          "price": 4938,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/450930693/detail.aspx",
           "type": "constant"
@@ -243,7 +243,7 @@
           "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "влажный корм собакам, одна банка",
           "category": "food",
-          "price": 358,
+          "price": 372,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
           "type": "constant"
@@ -270,7 +270,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 917,
+          "price": 953,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -279,7 +279,7 @@
           "title": "Пелёнки Skippy 60×90, 30 шт",
           "note": "в хоспис и стационар",
           "category": "hygiene",
-          "price": 548,
+          "price": 541,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
@@ -303,7 +303,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-10-11",
+      "updated": "2026-10-14",
       "links": [
         {
           "label": "ВКонтакте",
@@ -334,7 +334,7 @@
           "title": "Award Urinary для кошек, курица, 1,5 кг",
           "note": "стерилизованным кошкам, профилактика МКБ",
           "category": "food",
-          "price": 1255,
+          "price": 1221,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/231853861/detail.aspx",
           "type": "constant"
@@ -343,7 +343,7 @@
           "title": "Award Urinary для кошек, курица и клюква, 10 кг",
           "note": "стерилизованным кошкам, профилактика МКБ",
           "category": "food",
-          "price": 6162,
+          "price": 6163,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/1238453579/detail.aspx",
           "type": "constant"
