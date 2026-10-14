@@ -212,13 +212,13 @@ function folder(s, i, deliveredCount) {
     </header>
     <div class="sheet">
       <div class="body" id="body-${s.slug}">
+        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         <div class="list" id="list-${s.slug}">
           <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
           ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
-        <div class="pvz"><p class="cap">Пункты выдачи</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         ${delivered}
       </div>
     </div>
@@ -230,7 +230,10 @@ function goToFolder(el) {
 }
 
 function render(data, delivered) {
-  const shelters = data.shelters;
+  // первым — приют, куда доехало меньше всего посылок: порядок на странице решает, куда идут покупки
+  const got = {};
+  delivered.forEach(d => { got[d.shelter] = (got[d.shelter] || 0) + (d.parcels || 1); });
+  const shelters = data.shelters.map((s, i) => ({ s, i })).sort((a, b) => (got[a.s.slug] || 0) - (got[b.s.slug] || 0) || a.i - b.i).map(x => x.s);
 
   // ссылки на канал и чат
   document.querySelectorAll('[data-link]').forEach(a => {

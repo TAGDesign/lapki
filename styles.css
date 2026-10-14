@@ -112,7 +112,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .list .pos{padding:14px 0;border-top:1px solid var(--line)}
 .list > .pos:first-of-type{margin-top:8px}
 .more{display:block;width:100%;border:1px solid var(--ink);border-radius:999px;padding:12px;font-weight:700;margin-top:4px;text-align:center}
-.pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin-top:20px}
+.pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin:4px 0 16px}
 .pvz ul{margin-top:8px}
 .pvz li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px;min-height:51px}
 .pvz li > span{flex:1;min-width:0;overflow-wrap:anywhere;hyphens:auto}
