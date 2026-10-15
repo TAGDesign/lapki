@@ -100,10 +100,22 @@ function handoff(addr, platform, from) {
   copy.classList.remove('ok');
   copy.dataset.copy = addr;
   el.hidden = false;
+  replayHandoffIcon();
   nbsp(el);
   // фокус на «Скопировать адрес»: вернувшись с маркетплейса, человек с клавиатуры сразу на кнопке
   copy.focus({ preventScroll: true });
 }
+function replayHandoffIcon() {
+  const icon = document.querySelector('#handoff .h-icon');
+  if (!icon) return;
+  icon.style.animation = 'none';
+  void icon.getBoundingClientRect();
+  icon.style.animation = '';
+}
+// Ссылка открывает новую вкладку: повторяем акцент, когда человек возвращается к адресу.
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && !document.getElementById('handoff').hidden) replayHandoffIcon();
+});
 function closeHandoff() {
   const el = document.getElementById('handoff');
   if (el.hidden) return;
@@ -212,13 +224,13 @@ function folder(s, i, deliveredCount) {
     </header>
     <div class="sheet">
       <div class="body" id="body-${s.slug}">
-        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         <div class="list" id="list-${s.slug}">
           <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
           ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
+        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         ${delivered}
       </div>
     </div>

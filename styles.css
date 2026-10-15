@@ -112,7 +112,7 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .list .pos{padding:14px 0;border-top:1px solid var(--line)}
 .list > .pos:first-of-type{margin-top:8px}
 .more{display:block;width:100%;border:1px solid var(--ink);border-radius:999px;padding:12px;font-weight:700;margin-top:4px;text-align:center}
-.pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin:4px 0 16px}
+.pvz{background:var(--surface);border-radius:16px;padding:12px 14px 6px;margin:16px 0 4px}
 .pvz ul{margin-top:8px}
 .pvz li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px;min-height:51px}
 .pvz li > span{flex:1;min-width:0;overflow-wrap:anywhere;hyphens:auto}
@@ -216,12 +216,15 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 /* плашка после «Купить»: висит, пока не закроют; при новом «Купить» заменяется */
 .handoff{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:21;width:min(94vw,400px);background:var(--ink);color:#fff;border-radius:18px;padding:16px 18px 16px;display:grid;gap:8px;text-align:center;box-shadow:0 12px 32px rgba(4,32,43,.3)}
 .handoff[hidden]{display:none}
+.handoff .h-icon{justify-self:center;color:var(--action);animation:handoffPin 1.2s ease-in-out 3}
+@keyframes handoffPin{0%,100%{transform:translateY(0)}35%{transform:translateY(-5px)}60%{transform:translateY(0)}78%{transform:translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){.handoff .h-icon{animation:none}}
 .handoff .cap{color:#a9b6bb}
 .handoff b{font-size:18px;line-height:1.2}
 .handoff .h-copy{min-height:44px;border-radius:12px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;padding:0 16px}
 .handoff .h-copy.ok{background:transparent;color:#fff;border:1px solid #fff;display:flex;align-items:center;justify-content:center;gap:8px}
 .handoff .h-copy.ok::before{content:"";width:7px;height:12px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
-.h-close,.lb-close{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12)}
+.h-close,.lb-close{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12)}
 .h-close::before,.h-close::after,.lb-close::before,.lb-close::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:#fff;transform:translate(-50%,-50%) rotate(45deg)}
 .h-close::after,.lb-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
 /* фото на весь экран */
@@ -233,4 +236,4 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 
 /* зоны нажатия ≥ 44px: видимый размер прежний, область касания шире */
 .hero-done,.links-inline a,.pvz .copy,.cookie button,.chat{position:relative}
-.hero-done::after,.links-inline a::after,.pvz .copy::after,.h-close::after,.lb-close::after,.cookie button::after,.chat::after{content:"";position:absolute;left:50%;top:50%;min-width:44px;min-height:44px;width:100%;height:100%;transform:translate(-50%,-50%)}
+.hero-done::after,.links-inline a::after,.pvz .copy::after,.cookie button::after,.chat::after{content:"";position:absolute;left:50%;top:50%;min-width:44px;min-height:44px;width:100%;height:100%;transform:translate(-50%,-50%)}
