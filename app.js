@@ -197,6 +197,19 @@ function position(it, shelter, opts = {}) {
     + buy + `</div>`;
 }
 
+function animalGallery(s) {
+  if (!s.animals?.length) return '';
+  return `<section class="animals" aria-labelledby="animals-${esc(s.slug)}">
+    <div class="animals-heading"><h4 id="animals-${esc(s.slug)}">Кому помогаем</h4><span>Фото и видео приюта</span></div>
+    <div class="animals-track" tabindex="0" aria-label="Животные приюта — листайте фотографии">
+      ${s.animals.map(a => `<button class="animal-card" type="button" data-animal-src="${esc(a.src)}" data-animal-type="${esc(a.type)}" data-animal-name="${esc(a.name)}" data-animal-poster="${esc(a.poster || '')}" aria-label="${a.type === 'video' ? 'Смотреть видео: ' : 'Открыть фото: '}${esc(a.name)}">
+        ${a.type === 'video' ? `<span class="animal-video-cover"><img src="${esc(a.poster)}" alt="" loading="lazy" width="160" height="180"><span aria-hidden="true">▶</span></span>` : `<img src="${esc(a.src)}" alt="" loading="lazy" width="160" height="180">`}
+        <span class="animal-name">${esc(a.name)}</span>
+      </button>`).join('')}
+    </div>
+  </section>`;
+}
+
 function folder(s, i, deliveredCount) {
   const open = s.items.filter(isOpen);
   const rest = open.length - VISIBLE;
@@ -217,6 +230,7 @@ function folder(s, i, deliveredCount) {
   return `<article class="folder" id="${s.slug}">
     <header class="head">
       ${s.type ? `<p class="cap kind">${esc(s.type)}</p>` : ''}
+      ${s.logo ? `<img class="shelter-logo" src="${esc(s.logo)}" alt="Логотип ${esc(s.tab || s.name)}" width="201" height="44">` : ''}
       <h3 class="head-name">${esc(s.tab || s.name)}</h3>
       <div class="meta">
         <span class="muted links-inline">${links}</span>
@@ -224,13 +238,15 @@ function folder(s, i, deliveredCount) {
     </header>
     <div class="sheet">
       <div class="body" id="body-${s.slug}">
+        ${s.description ? `<div class="shelter-about"><p><b>${esc(s.name)}</b></p><p>${esc(s.description)}</p><p class="shelter-links">${s.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</p></div>` : ''}
+        ${animalGallery(s)}
         <div class="list" id="list-${s.slug}">
           <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
           ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
-        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
+        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.delivery_note ? `<p class="pickup">${esc(s.delivery_note)}</p>` : ''}${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         ${delivered}
       </div>
     </div>
@@ -528,3 +544,29 @@ load();
     try { localStorage.setItem('lapki-cookie', '1'); } catch (e) {}
   });
 })();
+
+// Галерея животных отделена от отчётов о полученных посылках.
+const animalDialog = document.getElementById('animal-dialog');
+const animalContent = document.getElementById('animal-content');
+let animalFrom = null;
+document.addEventListener('click', event => {
+  const button = event.target.closest('[data-animal-src]');
+  if (!button) return;
+  animalFrom = button;
+  document.getElementById('animal-title').textContent = button.dataset.animalName;
+  const video = button.dataset.animalType === 'video';
+  const media = document.createElement(video ? 'video' : 'img');
+  media.src = button.dataset.animalSrc;
+  if (video) { media.poster = button.dataset.animalPoster; media.controls = true; media.playsInline = true; media.preload = 'metadata'; }
+  else media.alt = button.dataset.animalName;
+  animalContent.replaceChildren(media);
+  animalDialog.showModal();
+});
+document.getElementById('animal-close').addEventListener('click', () => animalDialog.close());
+animalDialog.addEventListener('click', event => { if (event.target === animalDialog) animalDialog.close(); });
+animalDialog.addEventListener('close', () => {
+  const video = animalContent.querySelector('video');
+  if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
+  animalContent.replaceChildren();
+  if (animalFrom) animalFrom.focus({ preventScroll: true });
+});

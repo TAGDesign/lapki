@@ -38,7 +38,7 @@
     <section class="hero" aria-labelledby="h1">
       <div>
         <h1 id="h1" class="rv" data-rv="hero" data-d="300">Вот что нужно приютам сегодня</h1>
-        <p class="lead rv" data-rv="hero" data-d="700">Заказываете на маркетплейсе в пункт выдачи рядом с приютом — волонтёры заберут.</p>
+        <p class="lead rv" data-rv="hero" data-d="700">«Лапки» помогают животным в приютах. Вы покупаете нужные им товары на маркетплейсе, а волонтёры забирают заказ и отвозят в приют.</p>
       </div>
 
       <div class="scene">
@@ -53,7 +53,7 @@
         <a class="cta" href="#lists" data-track="cta">Смотреть списки</a>
         <p class="muted under">без регистрации · 5 минут<span id="min-price"></span></p>
         <a class="hero-done" id="hero-done" href="#delivered"></a>
-        <p class="intro">Списки присылают волонтёры приютов, обновляем раз в день. На кнопке «Купить» — самая низкая цена среди Ozon, Маркета и Wildberries, без персональных скидок, кошельков и банковских карт.</p>
+        <p class="intro">Списки присылают волонтёры приютов, обновляем раз в день. На кнопке «Купить» — самая низкая цена среди Ozon, Яндекс Маркета и Wildberries, без персональных скидок, кошельков и банковских карт.</p>
       </div>
     </section>
 
@@ -91,7 +91,7 @@
           <li>Проверяем, что маркетплейс доставляет товар именно в этот пункт, и ставим самую низкую цену из трёх площадок.</li>
           <li>Обновляем список раз в день и ставим дату.</li>
         </ol>
-        <p>Сейчас это АНО «Лефедун», небольшая команда волонтёров из Орехово, и муниципальные приюты Печатники, Некрасовка и Бирюлёво.</p>
+        <p>Сейчас на сайте 5 приютов и волонтёрских команд: АНО «Лефедун» из Орехово, муниципальные приюты Печатники, Некрасовка и Бирюлёво, а также «Беригиня» из Наро-Фоминска. Для «Беригини» доступность доставки в указанный ПВЗ пока не проверена.</p>
       </details>
       <details>
         <summary>Где в маркетплейсе указать адрес приюта?</summary>
@@ -149,6 +149,10 @@
   <button type="button" class="lb-close" id="lightbox-close" aria-label="Закрыть"></button>
   <img id="lightbox-img" alt="">
 </div>
+<dialog id="animal-dialog" class="animal-dialog" aria-labelledby="animal-title">
+  <div class="animal-dialog-header"><h2 id="animal-title"></h2><button type="button" id="animal-close" aria-label="Закрыть фото или видео">✕</button></div>
+  <div id="animal-content"></div>
+</dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");

@@ -237,3 +237,30 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 /* зоны нажатия ≥ 44px: видимый размер прежний, область касания шире */
 .hero-done,.links-inline a,.pvz .copy,.cookie button,.chat{position:relative}
 .hero-done::after,.links-inline a::after,.pvz .copy::after,.cookie button::after,.chat::after{content:"";position:absolute;left:50%;top:50%;min-width:44px;min-height:44px;width:100%;height:100%;transform:translate(-50%,-50%)}
+
+/* Дополнительные сведения новой карточки приюта. */
+.shelter-logo{display:block;width:201px;max-width:100%;height:auto;margin-bottom:10px}
+.shelter-about{margin-bottom:20px;overflow-wrap:anywhere}
+.shelter-about p+p{margin-top:10px}
+.shelter-links{font-size:14px}
+
+/* Животные приюта: компактная лента, медиа открываются по запросу. */
+.animals{margin:20px 0 24px;min-width:0}
+.animals-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.animals-heading h4{font-size:18px;margin:0}
+.animals-heading>span{font-size:11px;color:var(--muted);text-align:right}
+.animals-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px;overscroll-behavior-x:contain;scrollbar-width:none}
+.animals-track::-webkit-scrollbar{display:none}
+.animal-card{flex:0 0 140px;scroll-snap-align:start;text-align:left;border-radius:12px;overflow:hidden;background:#f1f0ec}
+.animal-card img,.animal-video-cover{width:140px;height:158px;object-fit:cover;display:block}
+.animal-video-cover{position:relative;background:#e5eef0;color:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.animal-video-cover>span{position:absolute;inset:0;margin:auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-size:16px}
+.animal-name{display:block;padding:10px 12px;font-size:13px;font-weight:700}
+.animal-card:focus-visible,.animals-track:focus-visible{outline:2px solid var(--action);outline-offset:2px}
+.animal-dialog{position:fixed;inset:0;margin:auto;border:0;border-radius:18px;padding:16px;background:var(--ink);color:white;width:min(760px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:hidden}
+html:has(.animal-dialog[open]){overflow:hidden}
+.animal-dialog::backdrop{background:rgba(4,32,43,.85)}
+.animal-dialog-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:8px}
+.animal-dialog-header h2{margin:0;font-size:20px}
+.animal-dialog-header button{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#ffffff20;text-align:center}
+#animal-content img,#animal-content video{display:block;max-width:100%;max-height:calc(100dvh - 116px);width:auto;height:auto;margin:auto;border-radius:10px}

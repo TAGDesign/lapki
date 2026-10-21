@@ -35,7 +35,7 @@
           "title": "Зоогурман, консервы для собак, 850 г",
           "note": "одна банка — влажный корм собакам",
           "category": "food",
-          "price": 280,
+          "price": 279,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/431170565/detail.aspx",
           "type": "constant"
@@ -44,7 +44,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 953,
+          "price": 950,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -53,7 +53,7 @@
           "title": "Зоогурман Big Dog, консервы 850 г × 6",
           "note": "собакам средних и крупных пород",
           "category": "food",
-          "price": 1293,
+          "price": 1297,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/270965608/detail.aspx",
           "type": "constant"
@@ -62,7 +62,7 @@
           "title": "Вкусмясина с говядиной, консервы 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1320,
+          "price": 1535,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
           "type": "constant"
@@ -71,7 +71,7 @@
           "title": "Best Dinner Vet Profi Gastro Intestinal, 340 г × 6",
           "note": "собакам с чувствительным пищеварением",
           "category": "food",
-          "price": 2724,
+          "price": 2725,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/213074157/detail.aspx",
           "type": "constant"
@@ -111,16 +111,16 @@
           "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "одна банка — влажный корм собакам",
           "category": "food",
-          "price": 372,
+          "price": 249,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/315791369/detail.aspx?size=476435631",
           "type": "constant"
         },
         {
           "title": "Ем без проблем, консервы для собак с ягнёнком 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1798,
+          "price": 1781,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/910284193/detail.aspx",
           "type": "count",
@@ -132,7 +132,7 @@
           "title": "Brit Premium для котят с кроликом, паучи 85 г × 14",
           "note": "влажный корм котятам",
           "category": "food",
-          "price": 1008,
+          "price": 954,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/101708572/detail.aspx",
           "type": "count",
@@ -189,7 +189,7 @@
           "title": "Фениквантел 100 мг для собак, 5 таблеток",
           "note": "от глистов, собакам от 8 кг",
           "category": "meds",
-          "price": 242,
+          "price": 258,
           "platform": "ozon",
           "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
@@ -198,7 +198,7 @@
           "title": "Royal Canin Gastrointestinal для собак, 2 кг",
           "note": "собакам с больным ЖКТ",
           "category": "food",
-          "price": 3352,
+          "price": 3345,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/131450156/detail.aspx",
           "type": "constant"
@@ -207,7 +207,7 @@
           "title": "Organic Choice Vet Gastrointestinal, консервы 340 г × 6",
           "note": "собакам с больным ЖКТ",
           "category": "food",
-          "price": 2031,
+          "price": 2052,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/250586634/detail.aspx",
           "type": "constant"
@@ -225,7 +225,7 @@
           "title": "Royal Canin Gastrointestinal для кошек, 2 кг",
           "note": "кошкам с больным ЖКТ",
           "category": "food",
-          "price": 4573,
+          "price": 4590,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/173456849/detail.aspx",
           "type": "constant"
@@ -243,16 +243,16 @@
           "title": "Brit Premium by Nature, консервы для собак, говядина и рис, 850 г",
           "note": "влажный корм собакам, одна банка",
           "category": "food",
-          "price": 372,
+          "price": 249,
           "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/303063292/detail.aspx",
+          "url": "https://www.wildberries.ru/catalog/315791369/detail.aspx?size=476435631",
           "type": "constant"
         },
         {
           "title": "Зоогурман, консервы для собак, 850 г",
           "note": "одна банка — влажный корм собакам",
           "category": "food",
-          "price": 280,
+          "price": 279,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/431170565/detail.aspx",
           "type": "constant"
@@ -270,7 +270,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 953,
+          "price": 950,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -350,6 +350,116 @@
         }
       ],
       "type": "волонтёрская команда"
+    },
+    {
+      "slug": "beriginya",
+      "name": "АНО «Центр помощи бездомным животным - Беригиня»",
+      "tab": "Беригиня",
+      "who": "Наро-Фоминск",
+      "type": "приют для кошек и собак · Наро-Фоминск",
+      "description": "Приют для кошек и собак в Наро-Фоминске. Здесь спасают, лечат и реабилитируют бездомных животных и помогают им найти новый дом",
+      "updated": "2026-10-21",
+      "links": [
+        {
+          "label": "Сайт приюта",
+          "url": "https://beriginya.ru/"
+        },
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.ru/nfberiginya"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/beriginya_cat_dog"
+        }
+      ],
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Московская область, Наро-Фоминский городской округ, деревня Любаново, д. 26"
+        },
+        {
+          "platform": "wb",
+          "address": "Московская область, Наро-Фоминский городской округ, деревня Любаново, д. 26"
+        }
+      ],
+      "items": [
+        {
+          "title": "Нитриловые медицинские перчатки CRYSTAL PRO, M, 50 шт. (25 пар)",
+          "note": "Нужно 3 упаковки · цена за упаковку",
+          "category": "hygiene",
+          "price": 999,
+          "url": "https://www.ozon.ru/product/perchatki-nitrilovye-osobo-prochnye-crystal-pro-m-50-sht-1125964860/",
+          "platform": "ozon",
+          "type": "count",
+          "need": 3,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Felix «Аппетитные кусочки. Двойная Вкуснятина», говядина и домашняя птица в желе, 26 × 75 г",
+          "note": "Нужна 1 упаковка · цена за упаковку",
+          "category": "food",
+          "price": 734,
+          "url": "https://www.ozon.ru/product/vlazhnyy-korm-dlya-koshek-felix-appetitnye-kusochki-dvoynaya-vkusnyatina-govyadina-i-domashnyaya-714959052/",
+          "platform": "ozon",
+          "type": "count",
+          "need": 1,
+          "bought": 0,
+          "closed_at": null
+        },
+        {
+          "title": "Неболин-вет, 10 мл",
+          "note": "Нужно 2 флакона · цена за флакон · продавец «Лекарь»",
+          "category": "meds",
+          "price": 996,
+          "url": "https://www.ozon.ru/product/nebolin-vet-10-ml-2710753489/",
+          "platform": "ozon",
+          "type": "count",
+          "need": 2,
+          "bought": 0,
+          "closed_at": null
+        }
+      ],
+      "animals": [
+        {
+          "name": "Петра и Брайт",
+          "type": "image",
+          "src": "assets/beriginya/petra-bright.webp"
+        },
+        {
+          "name": "Гося",
+          "type": "image",
+          "src": "assets/beriginya/gosya.webp"
+        },
+        {
+          "name": "Оя",
+          "type": "image",
+          "src": "assets/beriginya/oya.webp"
+        },
+        {
+          "name": "Николь",
+          "type": "image",
+          "src": "assets/beriginya/nikol.webp"
+        },
+        {
+          "name": "Оскар",
+          "type": "image",
+          "src": "assets/beriginya/oskar.webp"
+        },
+        {
+          "name": "Степан",
+          "type": "video",
+          "src": "assets/beriginya/stepan.mp4",
+          "poster": "assets/beriginya/stepan-poster.jpg"
+        },
+        {
+          "name": "Гиджет",
+          "type": "video",
+          "src": "assets/beriginya/gidget.mp4",
+          "poster": "assets/beriginya/gidget-poster.jpg"
+        }
+      ]
     }
   ]
 }
