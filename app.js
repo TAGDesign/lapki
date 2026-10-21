@@ -549,24 +549,65 @@ load();
 const animalDialog = document.getElementById('animal-dialog');
 const animalContent = document.getElementById('animal-content');
 let animalFrom = null;
-document.addEventListener('click', event => {
-  const button = event.target.closest('[data-animal-src]');
-  if (!button) return;
-  animalFrom = button;
+let animalItems = [];
+let animalIndex = 0;
+let animalTouch = null;
+function clearAnimalMedia() {
+  const video = animalContent.querySelector('video');
+  if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
+  animalContent.replaceChildren();
+}
+function showAnimal(index) {
+  animalIndex = (index + animalItems.length) % animalItems.length;
+  const button = animalItems[animalIndex];
+  clearAnimalMedia();
   document.getElementById('animal-title').textContent = button.dataset.animalName;
   const video = button.dataset.animalType === 'video';
   const media = document.createElement(video ? 'video' : 'img');
   media.src = button.dataset.animalSrc;
   if (video) { media.poster = button.dataset.animalPoster; media.controls = true; media.playsInline = true; media.preload = 'metadata'; }
-  else media.alt = button.dataset.animalName;
+  else { media.alt = button.dataset.animalName; media.draggable = false; }
   animalContent.replaceChildren(media);
+}
+document.addEventListener('pointerdown', event => {
+  const button = event.target.closest('[data-animal-src]');
+  if (button) button.classList.add('pointer-focus');
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Tab') document.querySelectorAll('.pointer-focus').forEach(el => el.classList.remove('pointer-focus'));
+});
+document.addEventListener('click', event => {
+  const button = event.target.closest('[data-animal-src]');
+  if (!button) return;
+  animalFrom = button;
+  animalItems = [...button.closest('.animals-track').querySelectorAll('[data-animal-src]')];
+  showAnimal(animalItems.indexOf(button));
   animalDialog.showModal();
+});
+// Горизонтальный жест переключает медиа; элементы управления видео остаются нативными.
+animalDialog.addEventListener('touchstart', event => {
+  animalTouch = event.touches.length === 1 && !event.target.closest('video, button')
+    ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+}, { passive: true });
+animalDialog.addEventListener('touchend', event => {
+  if (!animalTouch || !event.changedTouches.length) return;
+  const dx = event.changedTouches[0].clientX - animalTouch.x;
+  const dy = event.changedTouches[0].clientY - animalTouch.y;
+  animalTouch = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) showAnimal(animalIndex + (dx < 0 ? 1 : -1));
+}, { passive: true });
+animalDialog.addEventListener('touchcancel', () => { animalTouch = null; });
+animalDialog.addEventListener('keydown', event => {
+  if (event.target.closest('video')) return;
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+    event.preventDefault();
+    showAnimal(animalIndex + (event.key === 'ArrowRight' ? 1 : -1));
+  }
 });
 document.getElementById('animal-close').addEventListener('click', () => animalDialog.close());
 animalDialog.addEventListener('click', event => { if (event.target === animalDialog) animalDialog.close(); });
 animalDialog.addEventListener('close', () => {
-  const video = animalContent.querySelector('video');
-  if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
-  animalContent.replaceChildren();
+  animalTouch = null;
+  clearAnimalMedia();
   if (animalFrom) animalFrom.focus({ preventScroll: true });
 });

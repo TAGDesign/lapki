@@ -256,7 +256,7 @@ details p{padding:0 0 18px;color:var(--ink-2);text-wrap:pretty}
 .animal-video-cover{position:relative;background:#e5eef0;color:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .animal-video-cover>span{position:absolute;inset:0;margin:auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-size:16px}
 .animal-name{display:block;padding:10px 12px;font-size:13px;font-weight:700}
-.animal-card:focus-visible,.animals-track:focus-visible{outline:2px solid var(--action);outline-offset:2px}
+.animal-card:focus-visible:not(.pointer-focus),.animals-track:focus-visible{outline:2px solid var(--action);outline-offset:2px}
 .animal-dialog{position:fixed;inset:0;margin:auto;border:0;border-radius:18px;padding:16px;background:var(--ink);color:white;width:min(760px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:hidden}
 html:has(.animal-dialog[open]){overflow:hidden}
 .animal-dialog::backdrop{background:rgba(4,32,43,.85)}
@@ -269,3 +269,6 @@ html:has(.animal-dialog[open]){overflow:hidden}
 .animal-dialog-header h2{margin:0;font-size:20px}
 .animal-dialog-header button{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#ffffff20;text-align:center}
 #animal-content img,#animal-content video{display:block;max-width:100%;max-height:calc(100dvh - 116px);width:auto;height:auto;margin:auto;border-radius:10px}
+
+.animal-card.pointer-focus{outline:none}
+#animal-content img{touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none}
