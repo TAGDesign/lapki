@@ -7,7 +7,7 @@
       "name": "Приют Некрасовка",
       "tab": "Приют Некрасовка",
       "who": "2700 собак · 350 кошек",
-      "updated": "2026-10-14",
+      "updated": "2026-10-22",
       "links": [
         {
           "label": "Сайт приюта",
@@ -44,7 +44,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 950,
+          "price": 944,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -62,7 +62,7 @@
           "title": "Вкусмясина с говядиной, консервы 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1535,
+          "price": 1572,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/9996700/detail.aspx",
           "type": "constant"
@@ -84,7 +84,7 @@
       "name": "Приют Печатники",
       "tab": "Приют Печатники",
       "who": "2000 собак · 90 кошек",
-      "updated": "2026-10-14",
+      "updated": "2026-10-22",
       "links": [
         {
           "label": "Сайт волонтёров приюта",
@@ -120,7 +120,7 @@
           "title": "Ем без проблем, консервы для собак с ягнёнком 850 г × 6",
           "note": "влажный корм собакам",
           "category": "food",
-          "price": 1781,
+          "price": 2250,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/910284193/detail.aspx",
           "type": "count",
@@ -150,7 +150,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-10-14",
+      "updated": "2026-10-22",
       "links": [
         {
           "label": "Сайт приюта",
@@ -189,7 +189,7 @@
           "title": "Фениквантел 100 мг для собак, 5 таблеток",
           "note": "от глистов, собакам от 8 кг",
           "category": "meds",
-          "price": 258,
+          "price": 260,
           "platform": "ozon",
           "url": "https://www.ozon.ru/product/3284254382/",
           "type": "constant"
@@ -198,7 +198,7 @@
           "title": "Royal Canin Gastrointestinal для собак, 2 кг",
           "note": "собакам с больным ЖКТ",
           "category": "food",
-          "price": 3345,
+          "price": 3351,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/131450156/detail.aspx",
           "type": "constant"
@@ -225,7 +225,7 @@
           "title": "Royal Canin Gastrointestinal для кошек, 2 кг",
           "note": "кошкам с больным ЖКТ",
           "category": "food",
-          "price": 4590,
+          "price": 4410,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/173456849/detail.aspx",
           "type": "constant"
@@ -234,7 +234,7 @@
           "title": "Farmina Vet Life UltraHypo для кошек, 2 кг",
           "note": "кошкам с аллергией",
           "category": "food",
-          "price": 4938,
+          "price": 5104,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/450930693/detail.aspx",
           "type": "constant"
@@ -261,7 +261,7 @@
           "title": "Лёгкое говяжье сушёное, TastyPaws, 200 г",
           "note": "лакомство собакам",
           "category": "food",
-          "price": 491,
+          "price": 530,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/240373076/detail.aspx",
           "type": "constant"
@@ -270,7 +270,7 @@
           "title": "Felix Природа вкуса, курица, 75 г × 26",
           "note": "влажный корм кошкам",
           "category": "food",
-          "price": 950,
+          "price": 944,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/277378155/detail.aspx",
           "type": "constant"
@@ -279,7 +279,7 @@
           "title": "Пелёнки Skippy 60×90, 30 шт",
           "note": "в хоспис и стационар",
           "category": "hygiene",
-          "price": 541,
+          "price": 567,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/732866334/detail.aspx",
           "type": "constant"
@@ -288,7 +288,7 @@
           "title": "Пенка Seni Care для лежачих, 500 мл",
           "note": "мыть лежачих животных",
           "category": "hygiene",
-          "price": 1088,
+          "price": 1100,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/781721332/detail.aspx",
           "type": "constant"
@@ -303,7 +303,7 @@
       "name": "АНО «Лефедун»",
       "tab": "АНО «Лефедун»",
       "who": "волонтёры Орехово · 6 тонн корма за август",
-      "updated": "2026-10-14",
+      "updated": "2026-10-22",
       "links": [
         {
           "label": "ВКонтакте",
@@ -334,7 +334,7 @@
           "title": "Award Urinary для кошек, курица, 1,5 кг",
           "note": "стерилизованным кошкам, профилактика МКБ",
           "category": "food",
-          "price": 1221,
+          "price": 1233,
           "platform": "wb",
           "url": "https://www.wildberries.ru/catalog/231853861/detail.aspx",
           "type": "constant"
@@ -359,7 +359,7 @@
       "type": "АНО «Центр помощи бездомным животным» · Наро-Фоминск",
       "name_in_header": true,
       "organization_genitive": "Центра",
-      "updated": "2026-10-21",
+      "updated": "2026-10-22",
       "links": [
         {
           "label": "Сайт Центра",
@@ -389,7 +389,7 @@
           "title": "Нитриловые медицинские перчатки CRYSTAL PRO, M, 50 шт. (25 пар)",
           "note": "Нужно 3 упаковки · цена за упаковку",
           "category": "hygiene",
-          "price": 999,
+          "price": 876,
           "url": "https://www.ozon.ru/product/perchatki-nitrilovye-osobo-prochnye-crystal-pro-m-50-sht-1125964860/",
           "platform": "ozon",
           "type": "count",
@@ -411,10 +411,10 @@
         },
         {
           "title": "Неболин-вет, 10 мл",
-          "note": "Нужно 2 флакона · цена за флакон · продавец «Лекарь»",
+          "note": "Нужно 2 флакона · цена за флакон",
           "category": "meds",
-          "price": 996,
-          "url": "https://www.ozon.ru/product/nebolin-vet-10-ml-2710753489/",
+          "price": 1132,
+          "url": "https://www.ozon.ru/product/nebolin-vet-suspenziya-dlya-sobak-i-koshek-10-ml-12-2027-3469553307/",
           "platform": "ozon",
           "type": "count",
           "need": 2,
@@ -460,7 +460,8 @@
           "src": "assets/beriginya/gidget.mp4",
           "poster": "assets/beriginya/gidget-poster.jpg"
         }
-      ]
+      ],
+      "money_url": "https://beriginya.ru/contacts"
     }
   ]
 }

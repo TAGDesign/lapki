@@ -259,9 +259,9 @@ function goToFolder(el) {
 
 function render(data, delivered) {
   // первым — приют, куда доехало меньше всего посылок: порядок на странице решает, куда идут покупки
-  const got = {};
-  delivered.forEach(d => { got[d.shelter] = (got[d.shelter] || 0) + (d.parcels || 1); });
-  const shelters = data.shelters.map((s, i) => ({ s, i })).sort((a, b) => (got[a.s.slug] || 0) - (got[b.s.slug] || 0) || a.i - b.i).map(x => x.s);
+  const counts = {};
+  delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + (d.parcels || 1); });
+  const shelters = data.shelters.map((s, i) => ({ s, i })).sort((a, b) => (counts[a.s.slug] || 0) - (counts[b.s.slug] || 0) || a.i - b.i).map(x => x.s);
 
   // ссылки на канал и чат
   document.querySelectorAll('[data-link]').forEach(a => {
@@ -271,8 +271,6 @@ function render(data, delivered) {
   });
 
   // папки
-  const counts = {};
-  delivered.forEach(d => { counts[d.shelter] = (counts[d.shelter] || 0) + (d.parcels || 1); }); // на одном фото может быть несколько посылок
   // счётчик на первом экране: сколько посылок доехало и в сколько приютов
   const total = Object.values(counts).reduce((x, y) => x + y, 0);
   if (total) {
