@@ -200,8 +200,8 @@ function position(it, shelter, opts = {}) {
 function animalGallery(s) {
   if (!s.animals?.length) return '';
   return `<section class="animals" aria-labelledby="animals-${esc(s.slug)}">
-    <div class="animals-heading"><h4 id="animals-${esc(s.slug)}">Кому помогаем</h4><span>Фото и видео приюта</span></div>
-    <div class="animals-track" tabindex="0" aria-label="Животные приюта — листайте фотографии">
+    <div class="animals-heading"><h4 id="animals-${esc(s.slug)}">Кому помогаем</h4><span>Фото и видео ${esc(s.organization_genitive || 'приюта')}</span></div>
+    <div class="animals-track" tabindex="0" aria-label="Животные ${esc(s.organization_genitive || 'приюта')} — листайте фотографии">
       ${s.animals.map(a => `<button class="animal-card" type="button" data-animal-src="${esc(a.src)}" data-animal-type="${esc(a.type)}" data-animal-name="${esc(a.name)}" data-animal-poster="${esc(a.poster || '')}" aria-label="${a.type === 'video' ? 'Смотреть видео: ' : 'Открыть фото: '}${esc(a.name)}">
         ${a.type === 'video' ? `<span class="animal-video-cover"><img src="${esc(a.poster)}" alt="" loading="lazy" width="160" height="180"><span aria-hidden="true">▶</span></span>` : `<img src="${esc(a.src)}" alt="" loading="lazy" width="160" height="180">`}
         <span class="animal-name">${esc(a.name)}</span>
@@ -246,7 +246,7 @@ function folder(s, i, deliveredCount) {
           ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
           ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
-        <div class="pvz"><p class="cap">Доставка — в пункт выдачи приюта</p><ul>${pvz}</ul>${s.delivery_note ? `<p class="pickup">${esc(s.delivery_note)}</p>` : ''}${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
+        <div class="pvz"><p class="cap">Доставка — в пункт выдачи ${esc(s.organization_genitive || 'приюта')}</p><ul>${pvz}</ul>${s.delivery_note ? `<p class="pickup">${esc(s.delivery_note)}</p>` : ''}${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         ${delivered}
       </div>
     </div>
