@@ -238,7 +238,7 @@ function folder(s, i, deliveredCount) {
     </header>
     <div class="sheet">
       <div class="body" id="body-${s.slug}">
-        ${s.description || s.show_about ? `<div class="shelter-about"><p><b>${esc(s.name)}</b></p>${s.description ? `<p>${esc(s.description)}</p>` : ''}<p class="shelter-links">${s.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</p></div>` : ''}
+        ${s.description || s.show_about ? `<div class="shelter-about">${s.name_in_header ? '' : `<p><b>${esc(s.name)}</b></p>`}${s.description ? `<p>${esc(s.description)}</p>` : ''}<p class="shelter-links">${s.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</p></div>` : ''}
         ${animalGallery(s)}
         <div class="list" id="list-${s.slug}">
           <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
