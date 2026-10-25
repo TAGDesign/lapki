@@ -1,5 +1,23 @@
 [
   {
+    "photo": "assets/delivered/2026-10-25-biryulevo-fenikvantel.webp",
+    "date": "2026-10-25",
+    "shelter": "biryulevo",
+    "item": "Фениквантел, 6 упаковок"
+  },
+  {
+    "photo": "assets/delivered/2026-10-25-biryulevo-organix.webp",
+    "date": "2026-10-25",
+    "shelter": "biryulevo",
+    "item": "Organix Gastrointestinal, 6 банок"
+  },
+  {
+    "photo": "assets/delivered/2026-10-25-biryulevo-brit.webp",
+    "date": "2026-10-25",
+    "shelter": "biryulevo",
+    "item": "Brit Premium, 6 банок"
+  },
+  {
     "photo": "assets/delivered/2026-10-24-pechatniki.webp",
     "date": "2026-10-24",
     "shelter": "pechatniki",
