@@ -462,6 +462,73 @@
         }
       ],
       "money_url": "https://beriginya.ru/contacts"
+    },
+    {
+      "slug": "iskra",
+      "name": "Приют Искра",
+      "tab": "Приют Искра",
+      "type": "муниципальный приют · Москва",
+      "who": "Москва · м. Бабушкинская",
+      "links": [
+        {
+          "label": "Сайт приюта",
+          "url": "https://priutiskra.ru/"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/priutiskra"
+        },
+        {
+          "label": "ВКонтакте",
+          "url": "https://vk.com/iskrashelter"
+        },
+        {
+          "label": "Надежда — получение посылок",
+          "url": "https://t.me/nadya_oil",
+          "person": true
+        }
+      ],
+      "money_url": "https://priutiskra.ru/pomoshh/",
+      "pvz": [
+        {
+          "platform": "ozon",
+          "address": "Москва, Енисейская ул., 11"
+        },
+        {
+          "platform": "wb",
+          "address": "Москва, Енисейская ул., 9А"
+        }
+      ],
+      "updated": "2026-10-25",
+      "items": [
+        {
+          "title": "Farmina Vet Life Dog Renal, консервы для собак",
+          "note": "одна банка — диетический корм при заболеваниях почек",
+          "category": "food",
+          "price": 517,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/300564966/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Royal Canin Hypoallergenic, консервы для собак, 400 г × 6",
+          "note": "диетический корм при пищевой аллергии",
+          "category": "food",
+          "price": 4305,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/135256711/detail.aspx",
+          "type": "constant"
+        },
+        {
+          "title": "Одноразовые перчатки, M, 100 шт. (50 пар)",
+          "note": "нужен размер M · фирма любая",
+          "category": "hygiene",
+          "price": 647,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/4435144020/",
+          "type": "constant"
+        }
+      ]
     }
   ]
 }
