@@ -173,18 +173,6 @@ const isConstant = it => it.type === 'constant';
 const isOpen = it => isConstant(it) || it.bought < it.need;
 const closedThisWeek = it => !isOpen(it) && (!it.closed_at || Date.now() - new Date(it.closed_at) < WEEK);
 
-function ring(it) {
-  const icon = `<span class="ic ic-${isOpen(it) ? esc(it.category || 'food') : 'check'}" aria-hidden="true"></span>`;
-  if (isConstant(it)) return `<span class="ring const" aria-hidden="true"><span>${icon}</span></span>`;
-  if (!isOpen(it)) return `<span class="ring done" aria-hidden="true"><span>${icon}</span></span>`;
-  const p = Math.round(it.bought / it.need * 100);
-  return `<span class="ring" style="--p:${p}" aria-hidden="true"><span>${icon}</span></span>`;
-}
-
-const counter = it => isConstant(it)
-  ? '<span aria-hidden="true">∞</span><span class="sr-only">нужно постоянно</span>'
-  : `${it.bought} из ${it.need}`;
-
 function position(it, shelter, opts = {}) {
   const pvz = (shelter.pvz || []).find(p => p.platform === it.platform);
   const addr = pvz && pvz.address ? pvz.address : '';
@@ -192,7 +180,6 @@ function position(it, shelter, opts = {}) {
     `<a class="buy" href="${esc(outLink(it.url, shelter.slug, 'buy'))}" target="_blank" rel="noopener" data-track="buy" data-slug="${shelter.slug}" data-addr="${esc(addr)}" data-platform="${PLATFORM_ON[it.platform] || ''}" aria-label="Купить: ${esc(it.title)} для ${esc(shelter.name)}, ${formatPrice(it.price)} на ${PLATFORM_ON[it.platform] || ''}. Откроется в новой вкладке">Купить на ${PLATFORM_ON[it.platform] || ''}<small>за ${formatPrice(it.price)}</small></a>`;
   const note = opts.noteOverride || it.note;
   return `<div class="pos${opts.extra ? ' extra' : ''}${opts.buy === false ? ' nobuy' : ''}">`
-    + `<span class="ind">${ring(it)}${opts.noCount || (!isConstant(it) && !it.bought) ? '' : `<span class="cnt${isConstant(it) ? ' inf' : ''}">${counter(it)}</span>`}</span>`
     + `<span class="txt"><b>${esc(it.title)}</b><span class="muted">${esc(note)}</span></span>`
     + buy + `</div>`;
 }
@@ -211,8 +198,7 @@ function animalGallery(s) {
 }
 
 function folder(s, i, deliveredCount) {
-  const open = s.items.filter(isOpen);
-  const rest = open.length - VISIBLE;
+  const open = s.items.filter(isOpen).slice(0, VISIBLE);
   const pvz = s.pvz.map(p => {
     const name = `<b>${PLATFORM[p.platform] || p.platform}</b>`;
     return p.address
@@ -243,8 +229,6 @@ function folder(s, i, deliveredCount) {
         <div class="list" id="list-${s.slug}">
           <p class="cap list-cap"><span>Нужно сейчас · ${open.length} ${plural(open.length, 'позиция', 'позиции', 'позиций')}</span><span>обновлён ${formatDate(s.updated)}</span></p>
           ${open.slice(0, VISIBLE).map(it => position(it, s)).join('')}
-          ${rest > 0 ? `<div class="acc" id="extra-${s.slug}" style="height:0px"><div class="acc-in">${open.slice(VISIBLE).map(it => position(it, s, { extra: true })).join('')}</div></div>` : ''}
-          ${rest > 0 ? `<button type="button" class="more" data-rest="${rest}" aria-expanded="false" aria-controls="extra-${s.slug}">Ещё ${rest} ${plural(rest, 'позиция', 'позиции', 'позиций')}</button>` : ''}
         </div>
         <div class="pvz"><p class="cap">Доставка — в пункт выдачи ${esc(s.organization_genitive || 'приюта')}</p><ul>${pvz}</ul>${s.delivery_note ? `<p class="pickup">${esc(s.delivery_note)}</p>` : ''}${s.pickup_days ? `<p class="pickup"><b>Забирают ${esc(s.pickup_days)}</b> — присылайте код в этот день: он обновляется ежедневно</p>` : ''}${s.heavy ? `<p class="pickup"><b>Тяжёлое:</b> ${esc(s.heavy)}</p>` : ''}</div>
         ${delivered}
@@ -284,7 +268,7 @@ function render(data, delivered) {
   watchReveal(lists);
 
   // карточка первого экрана и «от N ₽»
-  const allOpen = shelters.flatMap(s => s.items.filter(isOpen).map(it => ({ it, s })));
+  const allOpen = shelters.flatMap(s => s.items.filter(isOpen).slice(0, VISIBLE).map(it => ({ it, s })));
   // карточка первого экрана: первая открытая позиция первого получателя
   const firstShelter = shelters.find(s => s.items.some(isOpen));
   const hero = firstShelter ? { s: firstShelter, it: firstShelter.items.find(isOpen) } : null;

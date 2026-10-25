@@ -66,8 +66,8 @@ h1{font:700 clamp(33px,9.4vw,46px)/1 var(--display);letter-spacing:-.025em;text-
 .intro{padding:24px 2px 0;margin-bottom:-18px;color:var(--ink-2);text-wrap:pretty;max-width:34em}
 
 /* позиция */
-.pos{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:start}
-.pos .buy{grid-column:2;justify-self:stretch;margin-top:8px}
+.pos{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;align-items:start}
+.pos .buy{grid-column:1;justify-self:stretch;margin-top:8px}
 .pos b{font-weight:700;line-height:1.25;display:block}
 .pos .muted{display:block}
 .ind{display:grid;justify-items:center;align-content:start;gap:5px;grid-row:span 2}
