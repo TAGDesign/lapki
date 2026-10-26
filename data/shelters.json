@@ -533,6 +533,56 @@
           "url": "https://www.ozon.ru/product/4435144020/",
           "type": "constant"
         }
+      ],
+      "animals": [
+        {
+          "name": "Фея",
+          "type": "photo",
+          "src": "assets/iskra/feja.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/feja/"
+        },
+        {
+          "name": "Юта",
+          "type": "photo",
+          "src": "assets/iskra/juta-4.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/juta-4/"
+        },
+        {
+          "name": "Широ",
+          "type": "photo",
+          "src": "assets/iskra/shiro.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/shiro/"
+        },
+        {
+          "name": "Саймон",
+          "type": "photo",
+          "src": "assets/iskra/sajmon.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/sajmon/"
+        },
+        {
+          "name": "Чак",
+          "type": "photo",
+          "src": "assets/iskra/chak-2.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/chak-2/"
+        },
+        {
+          "name": "Хари",
+          "type": "photo",
+          "src": "assets/iskra/hari.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/hari/"
+        },
+        {
+          "name": "Лулу",
+          "type": "photo",
+          "src": "assets/iskra/lulu-2.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/lulu-2/"
+        },
+        {
+          "name": "Бусинка",
+          "type": "photo",
+          "src": "assets/iskra/businka-5.webp",
+          "source_url": "https://priutiskra.ru/shop/sobaki/businka-5/"
+        }
       ]
     }
   ]
