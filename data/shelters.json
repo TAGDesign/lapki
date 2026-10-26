@@ -429,9 +429,14 @@
           "src": "assets/beriginya/petra-bright.webp"
         },
         {
-          "name": "Гося",
-          "type": "image",
-          "src": "assets/beriginya/gosya.webp"
+          "name": "Мака",
+          "type": "photo",
+          "src": "assets/beriginya/maka.webp"
+        },
+        {
+          "name": "Черныш и Конфетка",
+          "type": "photo",
+          "src": "assets/beriginya/chernysh-konfetka.webp"
         },
         {
           "name": "Оя",
