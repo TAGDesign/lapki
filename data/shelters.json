@@ -424,6 +424,18 @@
       ],
       "animals": [
         {
+          "name": "Степан",
+          "type": "video",
+          "src": "assets/beriginya/stepan.mp4",
+          "poster": "assets/beriginya/stepan-poster.jpg"
+        },
+        {
+          "name": "Гиджет",
+          "type": "video",
+          "src": "assets/beriginya/gidget.mp4",
+          "poster": "assets/beriginya/gidget-poster.jpg"
+        },
+        {
           "name": "Петра и Брайт",
           "type": "image",
           "src": "assets/beriginya/petra-bright.webp"
@@ -452,18 +464,6 @@
           "name": "Оскар",
           "type": "image",
           "src": "assets/beriginya/oskar.webp"
-        },
-        {
-          "name": "Степан",
-          "type": "video",
-          "src": "assets/beriginya/stepan.mp4",
-          "poster": "assets/beriginya/stepan-poster.jpg"
-        },
-        {
-          "name": "Гиджет",
-          "type": "video",
-          "src": "assets/beriginya/gidget.mp4",
-          "poster": "assets/beriginya/gidget-poster.jpg"
         }
       ],
       "money_url": "https://beriginya.ru/contacts"
