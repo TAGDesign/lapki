@@ -150,7 +150,7 @@
       "name": "Приют Бирюлёво",
       "tab": "Приют Бирюлёво",
       "who": "2200 собак · 300 кошек",
-      "updated": "2026-10-22",
+      "updated": "2026-11-03",
       "links": [
         {
           "label": "Сайт приюта",
@@ -186,21 +186,21 @@
       ],
       "items": [
         {
-          "title": "Фениквантел 100 мг для собак, 5 таблеток",
-          "note": "от глистов, собакам от 8 кг",
-          "category": "meds",
-          "price": 260,
-          "platform": "ozon",
-          "url": "https://www.ozon.ru/product/3284254382/",
+          "title": "Brit Premium, паштет для собак, говядина и сердце, 850 г",
+          "note": "влажный корм собакам, одна банка",
+          "category": "food",
+          "price": 281,
+          "platform": "wb",
+          "url": "https://www.wildberries.ru/catalog/390693802/detail.aspx?size=566458260",
           "type": "constant"
         },
         {
-          "title": "Royal Canin Gastrointestinal для собак, 2 кг",
-          "note": "собакам с больным ЖКТ",
+          "title": "PET PRIDE, паштет для собак с говядиной, 150 г × 11",
+          "note": "влажный корм взрослым собакам",
           "category": "food",
-          "price": 3351,
-          "platform": "wb",
-          "url": "https://www.wildberries.ru/catalog/131450156/detail.aspx",
+          "price": 765,
+          "platform": "ozon",
+          "url": "https://www.ozon.ru/product/1300367464/",
           "type": "constant"
         },
         {
