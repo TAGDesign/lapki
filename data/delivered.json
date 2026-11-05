@@ -1,5 +1,17 @@
 [
   {
+    "photo": "assets/delivered/2026-11-01-biryulevo-fenikvantel-1.webp",
+    "date": "2026-11-01",
+    "shelter": "biryulevo",
+    "item": "Фениквантел, 1 упаковка"
+  },
+  {
+    "photo": "assets/delivered/2026-11-01-biryulevo-fenikvantel-2.webp",
+    "date": "2026-11-01",
+    "shelter": "biryulevo",
+    "item": "Фениквантел, 2 упаковки"
+  },
+  {
     "photo": "assets/delivered/2026-10-25-pechatniki-brit-kitten.webp",
     "date": "2026-10-25",
     "shelter": "pechatniki",
