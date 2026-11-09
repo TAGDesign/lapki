@@ -23,7 +23,8 @@ function outLink(url, slug, kind) {
 }
 
 // navigator.clipboard есть только на https; на http и в старых браузерах копируем через скрытое поле
-function copyText(text) {
+async function copyText(text) {
+  if (!text) return false;
   const ta = document.createElement('textarea');
   ta.value = text;
   ta.setAttribute('readonly', '');
@@ -34,7 +35,12 @@ function copyText(text) {
   let ok = false;
   try { ok = document.execCommand('copy'); } catch (e) {}
   ta.remove();
-  if (!ok && navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+  if (ok) return true;
+  try {
+    if (!navigator.clipboard) return false;
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) { return false; }
 }
 
 const YM_ID = 113157493;
@@ -124,11 +130,21 @@ function closeHandoff() {
   handoffFrom = null;
 }
 document.getElementById('handoff-close').addEventListener('click', closeHandoff);
-document.getElementById('handoff-copy').addEventListener('click', e => {
-  copyText(e.currentTarget.dataset.copy);
-  e.currentTarget.textContent = 'Скопировано';
-  e.currentTarget.classList.add('ok');
-  trackClick('copy_handoff', '');
+document.getElementById('handoff-copy').addEventListener('click', async e => {
+  const button = e.currentTarget;
+  const addr = button.dataset.copy;
+  const from = handoffFrom;
+  button.disabled = true;
+  button.classList.remove('ok');
+  button.textContent = 'Копируем…';
+  const ok = await copyText(addr);
+  button.disabled = false;
+  // Не обновляем плашку, если за время копирования открыли другой товар.
+  if (handoffFrom !== from || button.dataset.copy !== addr) return;
+  button.textContent = ok ? 'Скопировано' : 'Повторить копирование';
+  button.classList.toggle('ok', ok);
+  if (ok) trackClick('copy_handoff', from?.dataset.slug || '');
+  else toast('Не удалось скопировать. Выделите адрес и скопируйте вручную.');
 });
 
 // фото «Что уже доехало» на весь экран
@@ -337,13 +353,24 @@ document.addEventListener('click', e => {
   }
 
   if (t.matches('.copy')) {
-    trackClick('copy', t.closest('.folder')?.id || '');
-    // человек уже нажимал «Купить» и вернулся за адресом вручную — автокопирование для него не сработало
-    if (window.__boughtAt && Date.now() - window.__boughtAt < 10 * 60 * 1000) trackClick('copy_after_buy', t.closest('.folder')?.id || '');
-    copyText(t.dataset.copy);
-    t.classList.add('ok');
-    toast('Адрес скопирован<b>' + esc(t.dataset.copy) + '</b>');
-    setTimeout(() => t.classList.remove('ok'), 1500);
+    const addr = t.dataset.copy;
+    const slug = t.closest('.folder')?.id || '';
+    const afterBuy = window.__boughtAt && Date.now() - window.__boughtAt < 10 * 60 * 1000;
+    if (t.disabled) return;
+    t.disabled = true;
+    t.classList.remove('ok');
+    copyText(addr).then(ok => {
+      t.disabled = false;
+      if (!ok) {
+        toast('Не удалось скопировать. Выделите адрес и скопируйте вручную.');
+        return;
+      }
+      t.classList.add('ok');
+      toast('Адрес скопирован<b>' + esc(addr) + '</b>');
+      trackClick('copy', slug);
+      if (afterBuy) trackClick('copy_after_buy', slug);
+      setTimeout(() => t.classList.remove('ok'), 1500);
+    });
     return;
   }
 
@@ -351,8 +378,10 @@ document.addEventListener('click', e => {
     window.__boughtAt = Date.now();
     const addr = t.dataset.addr;
     if (addr) {
-      // не отменяем переход: вкладка должна открыться тем же нажатием
-      copyText(addr);
+      // Не ждем Promise и не отменяем переход: новая вкладка открывается этим кликом.
+      copyText(addr).then(ok => {
+        if (ok) trackClick('copy_auto', t.dataset.slug || '');
+      });
       handoff(addr, t.dataset.platform, t);
     }
   }
